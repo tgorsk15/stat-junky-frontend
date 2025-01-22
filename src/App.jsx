@@ -5,6 +5,10 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { Root } from './Pages/Root/Root'
 import { Account } from './Pages/Account/Account'
 import { Home } from './Pages/Home/Home'
+import { NbaPage } from './Pages/NbaPage/NbaPage'
+import { NflPage } from './Pages/NflPage/NflPage'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,8 +33,16 @@ function App() {
           path: "home",
           element: <Home />,
           children: [
-            // LEFT OFF HERE:
-            // create and insert NbaPage, etc... into here
+            {
+              // path: "nba",
+              index: true,
+              element: <NbaPage />,
+              
+            },
+            {
+              path: "nfl",
+              element: <NflPage />,
+            }
           ]
         }
       ]

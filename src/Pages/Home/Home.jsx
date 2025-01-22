@@ -1,12 +1,16 @@
-
+import { Outlet } from "react-router-dom"
+import { NavBar } from "../../Components/NavBar/NavBar"
 
 export const Home = () => {
-    // maybe put an Outlet here for NBA, NFL, etc??
-    // maybe can put in NavBar ehre as well?
 
     return (
         <div>
+            <nav>
+                <NavBar />
+            </nav>
 
+            <h2>I am Home Page</h2>
+            <Outlet />
         </div>
     )
 }

@@ -13,3 +13,9 @@ export const NavBar = () => {
         </div>
     )
 }
+
+// TMW 1/22
+// Routing working correctly currently, maybe switch over to backend
+// and start trying to filter down the data correctly from API
+
+// *OR, start setting up React Query on front end

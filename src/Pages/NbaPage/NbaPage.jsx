@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useQuery, QueryClient, useQueryClient } from "@tanstack/react-query"
 import { getEnvVariable } from "../../utils/apiSetter"
 
-const queryClient = new QueryClient()
 
 export const NbaPage = () => {
     const [teamData, changeData] = useState(true) 
@@ -12,12 +11,14 @@ export const NbaPage = () => {
         headers: {"Content-Type": "application/json"},
     }
 
-    const queryClient = useQueryClient
-    const {data: teams, isPending} = useQuery({
+    const queryClient = useQueryClient()
+    const {data: teamsData, isPending, error} = useQuery({
         queryFn: async () => {
             const apiUrl = getEnvVariable()
             const response = await fetch(`${apiUrl}`, options)
-            return await response.json()
+            const data = await response.json()
+            console.log(data)
+            return data
         },
         queryKey: 'teams'
     })
@@ -54,8 +55,12 @@ export const NbaPage = () => {
                 <div>Its Loading ...</div>
             )}
 
-            {data && (
+            {teamsData && (
                 <h2>teams is loaded</h2>
+            )}
+
+            {error && (
+                <div>An error occurred: {error.message}</div>
             )}
 
         </div>

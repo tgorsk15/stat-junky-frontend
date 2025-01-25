@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { Root } from './Pages/Root/Root'
 import { Account } from './Pages/Account/Account'
@@ -14,6 +15,8 @@ function App() {
   const [count, setCount] = useState(0)
   // will always be true until Account page is created:
   const [currentUser, changeUser] = useState(true)
+
+  const queryClient = new QueryClient()
 
   const routes = [
     {
@@ -52,9 +55,9 @@ function App() {
 
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </>
+    </QueryClientProvider>
   )
 }
 

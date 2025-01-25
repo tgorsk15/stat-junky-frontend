@@ -7,27 +7,26 @@ import { getTeams } from "../../utils/dataFetches"
 
 export const NbaPage = () => {
     const [teamData, changeData] = useState(true) 
+    const [isLoading, setLoading] = useState(false)
 
-    // const options = {
-    //     method: "GET",
-    //     headers: {"Content-Type": "application/json"},
-    // }
-
-    
 
     const queryClient = useQueryClient()
     const {data: teamsData, isPending, error, refetch} = useQuery({
         queryFn: getTeams,
         queryKey: ['allTeams'],
-        enabled: false
+        enabled: false,
+        initialData: null,
+        initialDataUpdatedAt: Date.now(),
+        
     })
 
-    function handleLoadClick() {
-        console.log('refecthing')
-        refetch()
+    async function handleLoadClick() {
+        setLoading(true)
+        await refetch()
+        setLoading(false)
     }
 
-    async function testFetch() {
+    // async function testFetch() {
         // const options = {
         //     method: "GET",
         //     headers: {"Content-Type": "application/json"},
@@ -43,7 +42,7 @@ export const NbaPage = () => {
         //     console.log(err)
         // }
 
-    }
+    // }
 
 
     return (
@@ -55,7 +54,7 @@ export const NbaPage = () => {
                 Get teams
             </button>
 
-            {isPending && (
+            {isLoading && (
                 <div>Its Loading ...</div>
             )}
 

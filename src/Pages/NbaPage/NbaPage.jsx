@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useQuery, QueryClient, useQueryClient } from "@tanstack/react-query"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 
 import { getEnvVariable } from "../../utils/apiSetter"
 import { getTeams } from "../../utils/dataFetches"
@@ -29,31 +29,13 @@ export const NbaPage = () => {
         setLoading(false)
     }
 
-    // async function testFetch() {
-        // const options = {
-        //     method: "GET",
-        //     headers: {"Content-Type": "application/json"},
-        // }
-
-        // try {
-        //     const apiUrl = getEnvVariable()
-        //     const response = await fetch(`${apiUrl}`, options) 
-        //     const data = await response.json()
-        //     console.log(data)
-
-        // } catch(err) {
-        //     console.log(err)
-        // }
-
-    // }
-
 
     return (
         <div>
             <h1>here is the nbaPage</h1>
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
-                    
+
                 />
             </section>
             <button

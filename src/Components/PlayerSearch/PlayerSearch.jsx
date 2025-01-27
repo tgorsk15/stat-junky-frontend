@@ -44,11 +44,9 @@ export const PlayerSearch = () => {
                 </button>
             </form>
 
-            {/* need to create an outer container that the below results sit inside of */}
-            {/* if results exist, container becomes visible and is a drop down menu */}
 
-            {/* LEFT OFF HERE: figure out how to structure div below */}
             <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
+                {/* **POSSIBLY move everything below into PlayerResults component */}
                 {resultsExist ? (
                     
                     results.map((player) => {
@@ -69,3 +67,10 @@ export const PlayerSearch = () => {
     )
 
 }
+
+// LEFT OFF HERE:
+// start testing to see if we can fetch player stats, configure backend
+// also need to link click of search result to pulling up player card and
+// triggering this fetch...
+// so we need to lift state of player1 upto NbaPage... where PlayerCard
+// will be a nested Component that then displays

@@ -12,7 +12,10 @@ export const NbaPage = () => {
     const [teamData, changeData] = useState(true) 
     const [isLoading, setLoading] = useState(false)
 
+    // set up state for activePlayer1
 
+
+    // ** Maybe pre-load all player data instead:
     const queryClient = useQueryClient()
     const {data: teamsData, isPending, error, refetch} = useQuery({
         queryFn: getTeams,
@@ -23,7 +26,7 @@ export const NbaPage = () => {
         
     })
 
-    async function handleLoadClick() {
+    async function handleLoadTest() {
         setLoading(true)
         await refetch()
         setLoading(false)
@@ -38,8 +41,12 @@ export const NbaPage = () => {
 
                 />
             </section>
+            <section>
+                
+            </section>
+
             <button
-                onClick={handleLoadClick}
+                onClick={handleLoadTest}
             >
                 Get teams
             </button>

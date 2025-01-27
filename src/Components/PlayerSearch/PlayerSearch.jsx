@@ -14,6 +14,7 @@ export const PlayerSearch = () => {
         initialData: null,
         initialDataUpdatedAt: Date.now(),
     })
+    // left off here, fetch not working... find out what bug is
 
     function handleSearch(e) {
         e.preventDefault()

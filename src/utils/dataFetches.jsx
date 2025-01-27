@@ -15,7 +15,7 @@ export async function getTeams() {
 
 export async function playersQuery() {
     const apiUrl = getEnvVariable()
-    const response = await fetch(`${apiUrl}/player/search`, options)
+    const response = await fetch(`${apiUrl}player/search`, options)
     const data = await response.json()
     console.log(data)
     return data

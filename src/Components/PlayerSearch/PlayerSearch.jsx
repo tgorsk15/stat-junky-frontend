@@ -7,26 +7,23 @@ import { useState } from "react"
 
 export const PlayerSearch = () => {
     const [query, changeQuery] = useState("")
+    const [resultsExist, setResults] = useState(false)
+    const [results, changeResults] = useState('')
+    // might need to create a loading state here for waiting for results
 
-    // const queryClient = useQueryClient()
-    // const {data: playerResults, error, refetch} = useQuery({
-    //     queryFn: () => playersQuery(query),
-    //     queryKey: ['playerResults', query],
-    //     enabled: !!query,
-        
-    // })
 
-    function handleSearch(e) {
+    async function handleSearch(e) {
         e.preventDefault()
         
-
         const formData = new FormData(e.target)
         const newQuery = formData.get('searchBox')
         changeQuery(newQuery)
 
-        console.log('users search:', newQuery)
-        const results = playersQuery(newQuery)
-        console.log('here are results:', results)
+        const response = await playersQuery(newQuery)
+        const data = response.players.data
+        console.log('here is data:', data)
+        setResults(true)
+        changeResults(data)
     }
 
     return (
@@ -47,7 +44,19 @@ export const PlayerSearch = () => {
                 </button>
             </form>
 
-            {/* here, if player results exist, display <playerResults/> here */}
+            {/* need to create an outer container that the below results sit inside of */}
+            {/* if results exist, container becomes visible and is a drop down menu */}
+            {resultsExist ? (
+                results.map((player) => {
+                    return (
+                        <div key={player.id} className={nbaPage.playerResult}>
+                            <button>{player.first_name} {player.last_name}</button>
+                        </div>
+                    )
+                }) 
+            ) : (
+                <div>no results</div>
+            )}
         </div>
     )
 

@@ -8,16 +8,13 @@ import { useState } from "react"
 export const PlayerSearch = () => {
     const [query, changeQuery] = useState("")
 
-    const queryClient = useQueryClient()
-    const {data: playerResults, error, refetch} = useQuery({
-        queryFn: () => playersQuery(query),
-        queryKey: ['playerResults', query],
-        enabled: !!query,
-        // initialData: null,
-        // initialDataUpdatedAt: Date.now()
-    })
-    // TMW 1/27
-    // left off here, figure out how to pass user search term into request to backend
+    // const queryClient = useQueryClient()
+    // const {data: playerResults, error, refetch} = useQuery({
+    //     queryFn: () => playersQuery(query),
+    //     queryKey: ['playerResults', query],
+    //     enabled: !!query,
+        
+    // })
 
     function handleSearch(e) {
         e.preventDefault()

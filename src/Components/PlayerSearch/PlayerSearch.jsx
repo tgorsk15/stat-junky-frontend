@@ -2,24 +2,34 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { playersQuery } from "../../utils/dataFetches"
 
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
+import { useState } from "react"
 
 
 export const PlayerSearch = () => {
+    const [query, changeQuery] = useState("")
 
     const queryClient = useQueryClient()
     const {data: playerResults, error, refetch} = useQuery({
-        queryFn: playersQuery,
-        queryKey: ['playerResults'],
-        enabled: false,
-        initialData: null,
-        initialDataUpdatedAt: Date.now(),
+        queryFn: () => playersQuery(query),
+        queryKey: ['playerResults', query],
+        enabled: !!query,
+        // initialData: null,
+        // initialDataUpdatedAt: Date.now()
     })
-    // left off here, fetch not working... find out what bug is
+    // TMW 1/27
+    // left off here, figure out how to pass user search term into request to backend
 
     function handleSearch(e) {
         e.preventDefault()
-        refetch()
-        console.log('hey there')
+        
+
+        const formData = new FormData(e.target)
+        const newQuery = formData.get('searchBox')
+        changeQuery(newQuery)
+
+        console.log('users search:', newQuery)
+        const results = playersQuery(newQuery)
+        console.log('here are results:', results)
     }
 
     return (
@@ -40,7 +50,6 @@ export const PlayerSearch = () => {
                 </button>
             </form>
 
-            {/* left off here: */}
             {/* here, if player results exist, display <playerResults/> here */}
         </div>
     )

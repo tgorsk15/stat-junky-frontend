@@ -27,7 +27,7 @@ export const PlayerSearch = () => {
     }
 
     return (
-        <div>
+        <div className={nbaPage.searchSection}>
             <form
                 onSubmit={handleSearch}
                 className={`${nbaPage.playerSearchForm}`}
@@ -46,17 +46,25 @@ export const PlayerSearch = () => {
 
             {/* need to create an outer container that the below results sit inside of */}
             {/* if results exist, container becomes visible and is a drop down menu */}
-            {resultsExist ? (
-                results.map((player) => {
-                    return (
-                        <div key={player.id} className={nbaPage.playerResult}>
-                            <button>{player.first_name} {player.last_name}</button>
-                        </div>
-                    )
-                }) 
-            ) : (
-                <div>no results</div>
-            )}
+
+            {/* LEFT OFF HERE: figure out how to structure div below */}
+            <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
+                {resultsExist ? (
+                    
+                    results.map((player) => {
+                        return (
+                            <div key={player.id} className={nbaPage.playerResult}>
+                                <button className={nbaPage.playerLink}>
+                                    {player.first_name} {player.last_name}
+                                </button>
+                            </div>
+                        )
+                    })
+                    
+                ) : (
+                    <div>no results</div>
+                )}
+            </div>
         </div>
     )
 

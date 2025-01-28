@@ -1,8 +1,14 @@
 import PropTypes from "prop-types"
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 
+import { getPlayerStats } from "../../utils/dataFetches"
+
 export const PlayerResults = ({ resultsExist, results }) => {
 
+    function handleResultClick(player) {
+        getPlayerStats(player)
+        console.log('player in frontend:', player)
+    }
 
     return (
         <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
@@ -11,7 +17,10 @@ export const PlayerResults = ({ resultsExist, results }) => {
                 results.map((player) => {
                     return (
                         <div key={player.id} className={nbaPage.playerResult}>
-                            <button className={nbaPage.playerLink}>
+                            <button 
+                                className={nbaPage.playerLink}
+                                onClick={() => handleResultClick(player)}
+                            >
                                 {player.first_name} {player.last_name}
                             </button>
                         </div>

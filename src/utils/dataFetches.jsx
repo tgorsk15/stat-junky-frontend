@@ -23,6 +23,7 @@ export async function playersQuery(query) {
 }
 
 export async function getPlayerStats(playerId) {
+    // in testing:
     const apiUrl = getEnvVariable()
     const response = await fetch(`${apiUrl}player/seasons/${15}`, options)
     const data = await response.json()

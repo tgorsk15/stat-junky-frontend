@@ -21,3 +21,10 @@ export async function playersQuery(query) {
     console.log(data)
     return data
 }
+
+export async function getPlayerStats(playerId) {
+    const apiUrl = getEnvVariable()
+    const response = await fetch(`${apiUrl}player/seasons/${15}`, options)
+    const data = await response.json()
+    console.log(data)
+}

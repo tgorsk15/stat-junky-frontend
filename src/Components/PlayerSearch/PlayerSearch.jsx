@@ -1,8 +1,9 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { playersQuery } from "../../utils/dataFetches"
-
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 import { useState } from "react"
+
+import { PlayerResults } from "../PlayerResults/PlayerResults"
 
 
 export const PlayerSearch = () => {
@@ -44,25 +45,10 @@ export const PlayerSearch = () => {
                 </button>
             </form>
 
-
-            <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
-                {/* **POSSIBLY move everything below into PlayerResults component */}
-                {resultsExist ? (
-                    
-                    results.map((player) => {
-                        return (
-                            <div key={player.id} className={nbaPage.playerResult}>
-                                <button className={nbaPage.playerLink}>
-                                    {player.first_name} {player.last_name}
-                                </button>
-                            </div>
-                        )
-                    })
-                    
-                ) : (
-                    <div>no results</div>
-                )}
-            </div>
+            <PlayerResults 
+                resultsExist={resultsExist}
+                results={results}
+            />
         </div>
     )
 

@@ -6,6 +6,7 @@ import { getTeams } from "../../utils/dataFetches"
 import nbaPage from "./nbaPage.module.css"
 
 import { PlayerSearch } from "../../Components/PlayerSearch/PlayerSearch"
+import { PlayerCard } from "../../Components/PlayerCard/PlayerCard"
 
 
 export const NbaPage = () => {
@@ -13,7 +14,8 @@ export const NbaPage = () => {
     const [isLoading, setLoading] = useState(false)
 
     // set up state for activePlayer1
-
+    const [player1, setPlayer1] = useState(null)
+    // POSSIBLY create a context for the player states... tedious to pass down
 
     // ** Maybe pre-load all player data instead:
     const queryClient = useQueryClient()
@@ -38,11 +40,13 @@ export const NbaPage = () => {
             <h1>here is the nbaPage</h1>
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
-
+                    setPlayer1={setPlayer1}
                 />
             </section>
-            <section>
-                
+            <section className={nbaPage.playerCardSection}>
+                <PlayerCard 
+                    player1={player1}
+                />
             </section>
 
             <button

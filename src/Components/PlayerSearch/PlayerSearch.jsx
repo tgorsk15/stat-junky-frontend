@@ -2,11 +2,12 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { playersQuery } from "../../utils/dataFetches"
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 import { useState } from "react"
+import PropTypes from "prop-types"
 
 import { PlayerResults } from "../PlayerResults/PlayerResults"
 
 
-export const PlayerSearch = () => {
+export const PlayerSearch = ({ setPlayer1 }) => {
     const [query, changeQuery] = useState("")
     const [resultsExist, setResults] = useState(false)
     const [results, changeResults] = useState('')
@@ -48,15 +49,13 @@ export const PlayerSearch = () => {
             <PlayerResults 
                 resultsExist={resultsExist}
                 results={results}
+                setPlayer1={setPlayer1}
             />
         </div>
     )
 
 }
 
-// LEFT OFF HERE:
-// start testing to see if we can fetch player stats, configure backend
-// also need to link click of search result to pulling up player card and
-// triggering this fetch...
-// so we need to lift state of player1 upto NbaPage... where PlayerCard
-// will be a nested Component that then displays
+PlayerSearch.propTypes = {
+    setPlayer1: PropTypes.func
+}

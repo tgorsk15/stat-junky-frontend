@@ -1,10 +1,19 @@
-export const PlayerCard = () => {
+import cardStyles from './playerCard.module.css'
+
+export const PlayerCard = ({ player1 }) => {
 
 
     return (
-        <div>
-           
-        </div>
+        <>
+            {player1 && (
+                <div className={cardStyles.cardContainer}>
+                    I am playerCard
+                </div> 
+            ) 
+
+            }
+        </>
+        
     )
 
 }

@@ -3,11 +3,19 @@ import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 
 import { getPlayerStats } from "../../utils/dataFetches"
 
-export const PlayerResults = ({ resultsExist, results }) => {
+export const PlayerResults = ({ resultsExist, results, setPlayer1 }) => {
 
     function handleResultClick(player) {
-        getPlayerStats(player)
+        const seasonStats = getPlayerStats(player)
         console.log('player in frontend:', player)
+        setPlayer1('player1 exists')
+
+        // TMW 1/29:
+        // Need to trigger setResults here to make menu dissapear
+        // IMPORTANT: need to think how to cut off player data on their last season
+        // to avoid empty seasons in returned data
+        // start working to take the returned data and putting it into PlayerCard component
+        
     }
 
     return (
@@ -37,5 +45,6 @@ export const PlayerResults = ({ resultsExist, results }) => {
 
 PlayerResults.propTypes = {
     resultsExist: PropTypes.bool,
-    results: PropTypes.any
+    results: PropTypes.any,
+    setPlayer1: PropTypes.func
 }

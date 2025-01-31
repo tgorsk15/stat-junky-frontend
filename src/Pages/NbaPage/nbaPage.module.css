@@ -4,8 +4,9 @@
 
 /* player search */
 .playerSearchSection {
-    height: 200px;
+    height: 110px;
     background-color: rgb(83, 177, 83);
+    margin-bottom: 55px;
 }
 
 .playerSearchForm {

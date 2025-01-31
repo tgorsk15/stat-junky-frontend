@@ -14,8 +14,9 @@ export const NbaPage = () => {
     const [isLoading, setLoading] = useState(false)
 
     // set up state for activePlayer1
-    const [player1, setPlayer1] = useState(null)
+    const [player1Stats, setPlayer1Stats] = useState(null)
     const [player1Load, setPlayer1Load] = useState(false)
+    // still need to bring up player1 state, which will contain player gen info
 
     // need to set up same states for player2
 
@@ -39,21 +40,26 @@ export const NbaPage = () => {
 
     return (
         <div>
-            <h1>here is the nbaPage</h1>
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
-                    setPlayer1={setPlayer1}
+                    setPlayer1Stats={setPlayer1Stats}
                     setPlayer1Load={setPlayer1Load}
                 />
             </section>
             <section className={nbaPage.playerCardSection}>
                 <PlayerCard 
-                    player1={player1}
-                    player1Load={player1Load}
+                    playerStats={player1Stats}
+                    playerLoad={player1Load}
                 />
+                {/* set up 2nd player card here */}
             </section>
 
-            <button
+
+
+
+
+
+            {/* <button
                 onClick={handleLoadTest}
             >
                 Get teams
@@ -69,7 +75,7 @@ export const NbaPage = () => {
 
             {error && (
                 <div>An error occurred: {error.message}</div>
-            )}
+            )} */}
 
         </div>
     )

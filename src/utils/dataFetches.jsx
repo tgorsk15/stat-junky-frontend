@@ -29,7 +29,6 @@ export async function getPlayerStats(player) {
         body: JSON.stringify(player)
     }
 
-    // in testing:
     const apiUrl = getEnvVariable()
     const response = await fetch(`${apiUrl}player/seasons`, postOptions)
     const data = await response.json()

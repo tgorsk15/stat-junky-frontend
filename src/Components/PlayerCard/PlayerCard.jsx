@@ -1,19 +1,21 @@
 import PropTypes from "prop-types"
 import cardStyles from './playerCard.module.css'
 
-export const PlayerCard = ({ player1, player1Load }) => {
+export const PlayerCard = ({ player, playerLoad }) => {
 
 
     return (
         <>
-            {player1Load ? (
+            {playerLoad ? (
                  <h2>Loading</h2>
 
             ) : (
                 
-                player1 && (
+                player && (
                     <div className={cardStyles.cardContainer}>
-                        I am playerCard
+                        <h2 className={cardStyles.playerTitle}>
+                            
+                        </h2>
                     </div> 
                 )
             )}
@@ -25,5 +27,6 @@ export const PlayerCard = ({ player1, player1Load }) => {
 }
 
 PlayerCard.propTypes = {
-    player1: PropTypes.any
+    player: PropTypes.any,
+    playerLoad: PropTypes.bool
 }

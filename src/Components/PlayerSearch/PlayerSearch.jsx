@@ -8,11 +8,10 @@ import { PlayerResults } from "../PlayerResults/PlayerResults"
 import { getPlayerStats } from "../../utils/dataFetches"
 
 
-export const PlayerSearch = ({ setPlayer1, setPlayer1Load }) => {
+export const PlayerSearch = ({ setPlayer1Stats, setPlayer1Load }) => {
     const [query, changeQuery] = useState("")
     const [resultsExist, setResults] = useState(false)
     const [results, changeResults] = useState('')
-    // might need to create a loading state here for waiting for results
 
 
     async function handleSearch(e) {
@@ -36,7 +35,7 @@ export const PlayerSearch = ({ setPlayer1, setPlayer1Load }) => {
         const seasonStats = await getPlayerStats(player)
         setPlayer1Load(false)
         console.log('player seasons', seasonStats)
-        setPlayer1(seasonStats)
+        setPlayer1Stats(seasonStats)
         
     }
 
@@ -63,7 +62,7 @@ export const PlayerSearch = ({ setPlayer1, setPlayer1Load }) => {
                 resultsExist={resultsExist}
                 setResults={setResults}
                 results={results}
-                setPlayer1={setPlayer1}
+                setPlayer1Stats={setPlayer1Stats}
                 handleResultClick={handleResultClick}
             />
         </div>
@@ -72,5 +71,6 @@ export const PlayerSearch = ({ setPlayer1, setPlayer1Load }) => {
 }
 
 PlayerSearch.propTypes = {
-    setPlayer1: PropTypes.func
+    setPlayer1Stats: PropTypes.func,
+    setPlayer1Load: PropTypes.func
 }

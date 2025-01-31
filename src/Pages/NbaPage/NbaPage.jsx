@@ -15,7 +15,6 @@ export const NbaPage = () => {
 
     // set up state for activePlayer1
     const [player1, setPlayer1] = useState(null)
-    // POSSIBLY create a context for the player states... tedious to pass down
 
     // ** Maybe pre-load all player data instead:
     const queryClient = useQueryClient()

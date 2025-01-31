@@ -48,6 +48,7 @@ export const PlayerSearch = ({ setPlayer1 }) => {
 
             <PlayerResults 
                 resultsExist={resultsExist}
+                setResults={setResults}
                 results={results}
                 setPlayer1={setPlayer1}
             />

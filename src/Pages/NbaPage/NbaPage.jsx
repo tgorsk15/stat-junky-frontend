@@ -15,9 +15,12 @@ export const NbaPage = () => {
 
     // set up state for activePlayer1
     const [player1, setPlayer1] = useState(null)
+    const [player1Load, setPlayer1Load] = useState(false)
+
+    // need to set up same states for player2
+
 
     // ** Maybe pre-load all player data instead:
-    const queryClient = useQueryClient()
     const {data: teamsData, isPending, error, refetch} = useQuery({
         queryFn: getTeams,
         queryKey: ['allTeams'],
@@ -40,11 +43,13 @@ export const NbaPage = () => {
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
                     setPlayer1={setPlayer1}
+                    setPlayer1Load={setPlayer1Load}
                 />
             </section>
             <section className={nbaPage.playerCardSection}>
                 <PlayerCard 
                     player1={player1}
+                    player1Load={player1Load}
                 />
             </section>
 

@@ -3,20 +3,15 @@ import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 
 import { getPlayerStats } from "../../utils/dataFetches"
 
-export const PlayerResults = ({ resultsExist, setResults, results, setPlayer1 }) => {
+export const PlayerResults = ({ resultsExist, results, handleResultClick }) => {
 
-    function handleResultClick(player) {
-        const seasonStats = getPlayerStats(player)
-        setResults(false)
-        console.log('player in frontend:', player)
-        setPlayer1('player1 exists')
-
-        // TMW 1/29:
-        // IMPORTANT: need to think how to cut off player data on their last season
-        // to avoid empty seasons in returned data
-        // start working to take the returned data and putting it into PlayerCard component
+    // async function handleResultClick(player) {
+    //     const seasonStats = await getPlayerStats(player)
+    //     console.log('player seasons', seasonStats)
+    //     setResults(false)
+    //     setPlayer1(seasonStats)
         
-    }
+    // }
 
     return (
         <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
@@ -45,6 +40,8 @@ export const PlayerResults = ({ resultsExist, setResults, results, setPlayer1 })
 
 PlayerResults.propTypes = {
     resultsExist: PropTypes.bool,
+    setResults: PropTypes.func,
     results: PropTypes.any,
-    setPlayer1: PropTypes.func
+    setPlayer1: PropTypes.func,
+    handleResultClick: PropTypes.func
 }

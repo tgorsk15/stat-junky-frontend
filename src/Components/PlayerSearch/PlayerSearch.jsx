@@ -5,9 +5,10 @@ import { useState } from "react"
 import PropTypes from "prop-types"
 
 import { PlayerResults } from "../PlayerResults/PlayerResults"
+import { getPlayerStats } from "../../utils/dataFetches"
 
 
-export const PlayerSearch = ({ setPlayer1 }) => {
+export const PlayerSearch = ({ setPlayer1, setPlayer1Load }) => {
     const [query, changeQuery] = useState("")
     const [resultsExist, setResults] = useState(false)
     const [results, changeResults] = useState('')
@@ -27,6 +28,18 @@ export const PlayerSearch = ({ setPlayer1 }) => {
         setResults(true)
         changeResults(data)
     }
+
+
+    async function handleResultClick(player) {
+        setResults(false)
+        setPlayer1Load(true)
+        const seasonStats = await getPlayerStats(player)
+        setPlayer1Load(false)
+        console.log('player seasons', seasonStats)
+        setPlayer1(seasonStats)
+        
+    }
+
 
     return (
         <div className={nbaPage.searchSection}>
@@ -51,6 +64,7 @@ export const PlayerSearch = ({ setPlayer1 }) => {
                 setResults={setResults}
                 results={results}
                 setPlayer1={setPlayer1}
+                handleResultClick={handleResultClick}
             />
         </div>
     )

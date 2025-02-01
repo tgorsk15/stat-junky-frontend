@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
+    height: fit-content;
     width: 50%;
     background-color: rgb(233, 96, 156);
 }
@@ -11,9 +11,18 @@
 .cardBody {
     width: 90%;
     background-color: rgb(127, 195, 171);
+    overflow-x: scroll;
 }
 
 .statsDescription {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
+    width: fit-content;
+}
+
+.seasonRow {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
 }

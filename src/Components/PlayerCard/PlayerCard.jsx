@@ -23,6 +23,7 @@ export const PlayerCard = () => {
 
     const player = currentPlayer.playerData
     const seasons = currentPlayer.seasons
+    console.log("seasons layout", seasons)
 
 
     return (
@@ -40,6 +41,7 @@ export const PlayerCard = () => {
 
                         <div className={cardStyles.cardBody}>
                             <div className={cardStyles.statsDescription}>
+                                <h5>Season</h5>
                                 <h5>GS</h5>
                                 <h5>PTS</h5>
                                 <h5>RBS</h5>
@@ -50,15 +52,29 @@ export const PlayerCard = () => {
                                 <h5>TOV</h5>
                                 <h5>FG%</h5>
                                 <h5>FGM</h5>
-                                <h5>3PM</h5>
                                 <h5>3P%</h5>
+                                <h5>3PM</h5>
                                 <h5>FTM</h5>
                                 <h5>FT%</h5>
                             </div>
-                            {seasons.map((season) => {
+                            {seasons.map((year) => {
                                 return (
-                                    <div key={season.season} className={cardStyles.seasonRow}>
-                                        
+                                    <div key={year.season} className={cardStyles.seasonRow}>
+                                        <h5>{year[0].season}</h5>
+                                        <h5>{year[0].games_played}</h5>
+                                        <h5>{Math.round(year[0].pts * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].reb * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].oreb * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].ast * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].stl * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].blk * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].turnover * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].fg_pct * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].fgm * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].fg3_pct * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].fg3m * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].ftm * 10) / 10}</h5>
+                                        <h5>{Math.round(year[0].ft_pct * 10) / 10}</h5>
                                     </div>
                                 )
                             })

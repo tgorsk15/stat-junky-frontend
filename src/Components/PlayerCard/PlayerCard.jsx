@@ -1,17 +1,22 @@
 import PropTypes from "prop-types"
+import { useContext } from "react"
+import { usePlayer } from "../../utils/usePlayer"
+
 import cardStyles from './playerCard.module.css'
 
-export const PlayerCard = ({ player, playerLoad }) => {
+export const PlayerCard = () => {
+    const { player1Load, player1Stats } = usePlayer()
+    // will have to revisit and refactor to accomadate for player2
 
 
     return (
         <>
-            {playerLoad ? (
+            {player1Load ? (
                  <h2>Loading</h2>
 
             ) : (
                 
-                player && (
+                player1Stats && (
                     <div className={cardStyles.cardContainer}>
                         <h2 className={cardStyles.playerTitle}>
                             
@@ -27,6 +32,6 @@ export const PlayerCard = ({ player, playerLoad }) => {
 }
 
 PlayerCard.propTypes = {
-    player: PropTypes.any,
+    playerStats: PropTypes.any,
     playerLoad: PropTypes.bool
 }

@@ -1,10 +1,11 @@
 import PropTypes from "prop-types"
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
+import { usePlayer } from "../../utils/usePlayer"
 
 // import { getPlayerStats } from "../../utils/dataFetches"
 
-export const PlayerResults = ({ resultsExist, results, handleResultClick }) => {
-
+export const PlayerResults = ({ handleResultClick }) => {
+    const { resultsExist, results } = usePlayer()
 
     return (
         <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
@@ -31,8 +32,6 @@ export const PlayerResults = ({ resultsExist, results, handleResultClick }) => {
 
 PlayerResults.propTypes = {
     resultsExist: PropTypes.bool,
-    setResults: PropTypes.func,
     results: PropTypes.any,
-    setPlayer1: PropTypes.func,
     handleResultClick: PropTypes.func
 }

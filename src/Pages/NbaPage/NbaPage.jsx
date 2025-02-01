@@ -4,21 +4,20 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getEnvVariable } from "../../utils/apiSetter"
 import { getTeams } from "../../utils/dataFetches"
 import nbaPage from "./nbaPage.module.css"
+import { usePlayer } from "../../utils/usePlayer"
 
 import { PlayerSearch } from "../../Components/PlayerSearch/PlayerSearch"
 import { PlayerCard } from "../../Components/PlayerCard/PlayerCard"
 
 
 export const NbaPage = () => {
-    const [teamData, changeData] = useState(true) 
-    const [isLoading, setLoading] = useState(false)
+    const { setLoading } = usePlayer()
+    // const [teamData, changeData] = useState(true) 
+    // const [isLoading, setLoading] = useState(false)
 
     // set up state for activePlayer1
-    const [player1Stats, setPlayer1Stats] = useState(null)
-    const [player1Load, setPlayer1Load] = useState(false)
-    // still need to bring up player1 state, which will contain player gen info
-
-    // need to set up same states for player2
+    // const [player1Stats, setPlayer1Stats] = useState(null)
+    // const [player1Load, setPlayer1Load] = useState(false)
 
 
     // ** Maybe pre-load all player data instead:
@@ -42,14 +41,14 @@ export const NbaPage = () => {
         <div>
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
-                    setPlayer1Stats={setPlayer1Stats}
-                    setPlayer1Load={setPlayer1Load}
+                    // setPlayer1Stats={setPlayer1Stats}
+                    // setPlayer1Load={setPlayer1Load}
                 />
             </section>
             <section className={nbaPage.playerCardSection}>
                 <PlayerCard 
-                    playerStats={player1Stats}
-                    playerLoad={player1Load}
+                    // playerStats={player1Stats}
+                    // playerLoad={player1Load}
                 />
                 {/* set up 2nd player card here */}
             </section>

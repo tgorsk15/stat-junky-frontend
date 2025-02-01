@@ -1,17 +1,21 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { playersQuery } from "../../utils/dataFetches"
+
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 import { useState } from "react"
 import PropTypes from "prop-types"
+import { usePlayer } from "../../utils/usePlayer"
 
 import { PlayerResults } from "../PlayerResults/PlayerResults"
 import { getPlayerStats } from "../../utils/dataFetches"
 
 
-export const PlayerSearch = ({ setPlayer1Stats, setPlayer1Load }) => {
+export const PlayerSearch = () => {
+    const { setPlayer1Stats, setPlayer1Load, setResults, changeResults } = usePlayer()
+
     const [query, changeQuery] = useState("")
-    const [resultsExist, setResults] = useState(false)
-    const [results, changeResults] = useState('')
+    // const [resultsExist, setResults] = useState(false)
+    // const [results, changeResults] = useState('')
 
 
     async function handleSearch(e) {
@@ -59,10 +63,6 @@ export const PlayerSearch = ({ setPlayer1Stats, setPlayer1Load }) => {
             </form>
 
             <PlayerResults 
-                resultsExist={resultsExist}
-                setResults={setResults}
-                results={results}
-                setPlayer1Stats={setPlayer1Stats}
                 handleResultClick={handleResultClick}
             />
         </div>

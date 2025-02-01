@@ -1,6 +1,10 @@
 import { useContext } from "react";
-import { PlayerContext } from "./PlayerContext";
+import { NbaPlayerContext } from "./NbaPlayerContext";
 
 export const usePlayer = () => {
-    return useContext(PlayerContext)
+    const context = useContext(NbaPlayerContext)
+    if (context === undefined) {
+        throw new Error('usePlayer must be used within a NbaPlayerProvider')
+    }
+    return context
 }

@@ -19,10 +19,6 @@ export const NbaPlayerProvider =({ children }) => {
     const [resultsExist, setResults] = useState(false)
     const [results, changeResults] = useState('')
 
-    // LEFT OFF HERE:
-    // start commenting out states in Components... try to get context Provider 
-    // to work... need to wrap NBAPage in Context first
-
 
     return (
         <NbaPlayerContext.Provider

@@ -14,8 +14,6 @@ export const PlayerSearch = () => {
     const { setPlayer1Stats, setPlayer1Load, setResults, changeResults } = usePlayer()
 
     const [query, changeQuery] = useState("")
-    // const [resultsExist, setResults] = useState(false)
-    // const [results, changeResults] = useState('')
 
 
     async function handleSearch(e) {

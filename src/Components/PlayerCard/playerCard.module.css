@@ -1,4 +1,19 @@
 .cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 300px;
+    width: 50%;
     background-color: rgb(233, 96, 156);
+}
+
+/* card body */
+.cardBody {
+    width: 90%;
+    background-color: rgb(127, 195, 171);
+}
+
+.statsDescription {
+    display: flex;
+    justify-content: space-evenly;
 }

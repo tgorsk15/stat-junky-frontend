@@ -11,7 +11,8 @@ import { getPlayerStats } from "../../utils/dataFetches"
 
 
 export const PlayerSearch = () => {
-    const { setPlayer1Stats, setPlayer1Load, setResults, changeResults } = usePlayer()
+    const { setPlayer1Stats, setPlayer1Load, setPlayer2Stats, setPlayer2Load,
+        setResults, changeResults } = usePlayer()
 
     const [query, changeQuery] = useState("")
 
@@ -31,13 +32,19 @@ export const PlayerSearch = () => {
     }
 
 
-    async function handleResultClick(player) {
+    async function handleResultClick(player, isPlayer2) {
         setResults(false)
-        setPlayer1Load(true)
-        const seasonStats = await getPlayerStats(player)
-        setPlayer1Load(false)
-        console.log('player seasons', seasonStats)
-        setPlayer1Stats(seasonStats)
+
+        if (isPlayer2) {
+            console.log('im player 2')
+        } else {
+            setPlayer1Load(true)
+            const seasonStats = await getPlayerStats(player)
+            setPlayer1Load(false)
+            console.log('player seasons', seasonStats)
+            setPlayer1Stats(seasonStats)  
+        }
+        
         
     }
 

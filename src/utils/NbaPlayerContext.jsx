@@ -13,7 +13,8 @@ export const NbaPlayerProvider =({ children }) => {
     // still need to bring up player1 state, which will contain player gen info
 
     // need to set up same states for player2
-
+    const [player2Stats, setPlayer2Stats] = useState(null)
+    const [player2Load, setPlayer2Load] = useState(false)
 
     // playerSearch states
     const [resultsExist, setResults] = useState(false)
@@ -27,6 +28,8 @@ export const NbaPlayerProvider =({ children }) => {
                 isLoading, setLoading,
                 player1Stats, setPlayer1Stats,
                 player1Load, setPlayer1Load,
+                player2Stats, setPlayer2Stats,
+                player2Load, setPlayer2Load,
                 resultsExist, setResults,
                 results, changeResults
             }}

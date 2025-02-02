@@ -16,6 +16,7 @@ export const PlayerResults = ({ handleResultClick }) => {
                         <div key={player.id} className={nbaPage.playerResult}>
                             <button 
                                 className={nbaPage.playerLink}
+                                // could add to onClick function to make menu dissapear
                                 onClick={() => handleResultClick(player)}
                             >
                                 {player.first_name} {player.last_name}

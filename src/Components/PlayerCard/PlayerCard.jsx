@@ -5,7 +5,7 @@ import { usePlayer } from "../../utils/usePlayer"
 import cardStyles from './playerCard.module.css'
 
 export const PlayerCard = () => {
-    const { player1Load, player1Stats } = usePlayer()
+    const { player1Load, player1Stats, player2Load, player2Stats } = usePlayer()
     let currentPlayer = player1Stats;
 
     // ** will have to revisit and refactor to accomadate for player2

@@ -11,7 +11,7 @@ import { PlayerCard } from "../../Components/PlayerCard/PlayerCard"
 
 
 export const NbaPage = () => {
-    const { setLoading } = usePlayer()
+    const { setLoading, player1Stats } = usePlayer()
     // const [teamData, changeData] = useState(true) 
     // const [isLoading, setLoading] = useState(false)
 
@@ -40,15 +40,19 @@ export const NbaPage = () => {
     return (
         <div>
             <section className={`${nbaPage.playerSearchSection}`}>
+
                 <PlayerSearch 
-                    // setPlayer1Stats={setPlayer1Stats}
-                    // setPlayer1Load={setPlayer1Load}
+
                 />
+                {player1Stats && (
+                    <PlayerSearch 
+
+                    />
+                )}
             </section>
             <section className={nbaPage.playerCardSection}>
                 <PlayerCard 
-                    // playerStats={player1Stats}
-                    // playerLoad={player1Load}
+
                 />
                 {/* set up 2nd player card here */}
             </section>

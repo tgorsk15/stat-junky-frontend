@@ -16,9 +16,15 @@ export const NbaPlayerProvider =({ children }) => {
     const [player2Load, setPlayer2Load] = useState(false)
 
     // playerSearch states
-    const [resultsExist, setResults] = useState(false)
-    const [results, changeResults] = useState('')
+    // const [resultsExist, setResults] = useState(false)
+    // const [results, changeResults] = useState('')
+    // player1
+    const [player1Exists, setPlayer1Exist] = useState(false)
+    const [player1Results, changeP1Results] = useState('')
 
+    // player2
+    const [player2Exists, setPlayer2Exist] = useState(false)
+    const [player2Results, changeP2Results] = useState('')
 
     return (
         <NbaPlayerContext.Provider
@@ -29,8 +35,12 @@ export const NbaPlayerProvider =({ children }) => {
                 player1Load, setPlayer1Load,
                 player2Stats, setPlayer2Stats,
                 player2Load, setPlayer2Load,
-                resultsExist, setResults,
-                results, changeResults
+                // resultsExist, setResults,
+                // results, changeResults,
+                player1Exists, setPlayer1Exist,
+                player1Results, changeP1Results,
+                player2Exists, setPlayer2Exist,
+                player2Results, changeP2Results
             }}
         >
             { children }

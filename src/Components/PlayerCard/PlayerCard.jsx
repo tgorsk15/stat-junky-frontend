@@ -5,9 +5,8 @@ import { usePlayer } from "../../utils/usePlayer"
 import cardStyles from './playerCard.module.css'
 
 export const PlayerCard = ({isPlayer2}) => {
-    console.log('boolean player check:', isPlayer2)
-
     const { player1Load, player1Stats, player2Load, player2Stats } = usePlayer()
+
     const currentPlayerStats = isPlayer2 ? player2Stats : player1Stats
     const isLoading = isPlayer2 ? player2Load : player1Load
 
@@ -21,7 +20,6 @@ export const PlayerCard = ({isPlayer2}) => {
         return
     }
     
-
     const player = currentPlayerStats.playerData
     const seasons = currentPlayerStats.seasons
     console.log("seasons layout", seasons)
@@ -29,7 +27,7 @@ export const PlayerCard = ({isPlayer2}) => {
 
     return (
         <>
-                
+                {/* NEED TO convert % stats into %s... */}
             {currentPlayerStats && (
                 <div className={cardStyles.cardContainer}>
                     <h2 className={cardStyles.playerTitle}>

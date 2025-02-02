@@ -28,7 +28,6 @@ export const NbaPage = () => {
     return (
         <div>
             <section className={`${nbaPage.playerSearchSection}`}>
-
                 <PlayerSearch 
 
                 />

@@ -2,16 +2,18 @@ import PropTypes from "prop-types"
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 import { usePlayer } from "../../utils/usePlayer"
 
-// import { getPlayerStats } from "../../utils/dataFetches"
 
-export const PlayerResults = ({ handleResultClick }) => {
-    const { resultsExist, results } = usePlayer()
+export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
+    const { player1Exists, player1Results, player2Exists, player2Results } = usePlayer()
+
+    const playerExists = isPlayer2 ? player2Exists : player1Exists
+    const playerResults = isPlayer2 ? player2Results : player1Results
 
     return (
-        <div className={`{nbaPage.resultsBox} ${resultsExist ? nbaPage.activeList : ''}`}>
-           {resultsExist && (
+        <div className={`{nbaPage.resultsBox} ${playerExists ? nbaPage.activeList : ''}`}>
+           {playerExists && (
                                
-                results.map((player) => {
+                playerResults.map((player) => {
                     return (
                         <div key={player.id} className={nbaPage.playerResult}>
                             <button 
@@ -32,7 +34,6 @@ export const PlayerResults = ({ handleResultClick }) => {
 }
 
 PlayerResults.propTypes = {
-    resultsExist: PropTypes.bool,
-    results: PropTypes.any,
-    handleResultClick: PropTypes.func
+    handleResultClick: PropTypes.func,
+    isPlayer2: PropTypes.bool
 }

@@ -12,7 +12,7 @@ import { getPlayerStats } from "../../utils/dataFetches"
 
 export const PlayerSearch = ({isPlayer2}) => {
     const { setPlayer1Stats, setPlayer1Load, setPlayer2Stats, setPlayer2Load,
-        setResults, changeResults } = usePlayer()
+        setPlayer1Exist, changeP1Results,  setPlayer2Exist, changeP2Results} = usePlayer()
 
     const [query, changeQuery] = useState("")
 
@@ -27,15 +27,21 @@ export const PlayerSearch = ({isPlayer2}) => {
         const response = await playersQuery(newQuery)
         const data = response.players.data
         console.log('here is data:', data)
-        setResults(true)
-        changeResults(data)
+
+        if (isPlayer2) {
+            setPlayer2Exist(true)
+            changeP2Results(data)
+        } else {
+            setPlayer1Exist(true)
+            changeP1Results(data)
+        }
     }
 
 
     async function handleResultClick(player) {
-        setResults(false)
 
         if (isPlayer2) {
+            setPlayer2Exist(false)
             console.log('im player 2')
             setPlayer2Load(true)
             const seasonStats = await getPlayerStats(player)
@@ -44,6 +50,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer2Stats(seasonStats)
 
         } else {
+            setPlayer1Exist(false)
             setPlayer1Load(true)
             const seasonStats = await getPlayerStats(player)
             setPlayer1Load(false)
@@ -52,9 +59,6 @@ export const PlayerSearch = ({isPlayer2}) => {
         }
         
     }
-    // LEFT OFF HERE:
-    // need to figure out how to fix loading on player cards
-    // ...need to fix states of both search menus at once
 
 
     return (
@@ -77,6 +81,7 @@ export const PlayerSearch = ({isPlayer2}) => {
 
             <PlayerResults 
                 handleResultClick={handleResultClick}
+                isPlayer2={isPlayer2}
             />
         </div>
     )

@@ -57,3 +57,10 @@
     padding: 0px;
     background: none;
 }
+
+
+/* playerCard section */
+.playerCardSection {
+    display: flex;
+    justify-content: space-between;
+}

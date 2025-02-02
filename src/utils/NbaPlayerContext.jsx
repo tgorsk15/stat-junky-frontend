@@ -5,7 +5,6 @@ export const NbaPlayerContext = createContext()
 
 export const NbaPlayerProvider =({ children }) => {
     const [teamData, changeData] = useState(true) 
-    // const [isLoading, setLoading] = useState(false)
 
     // set up state for activePlayer1
     const [player1Stats, setPlayer1Stats] = useState(null)
@@ -16,8 +15,6 @@ export const NbaPlayerProvider =({ children }) => {
     const [player2Load, setPlayer2Load] = useState(false)
 
     // playerSearch states
-    // const [resultsExist, setResults] = useState(false)
-    // const [results, changeResults] = useState('')
     // player1
     const [player1Exists, setPlayer1Exist] = useState(false)
     const [player1Results, changeP1Results] = useState('')
@@ -30,13 +27,10 @@ export const NbaPlayerProvider =({ children }) => {
         <NbaPlayerContext.Provider
             value={{ 
                 teamData, changeData,
-                // isLoading, setLoading,
                 player1Stats, setPlayer1Stats,
                 player1Load, setPlayer1Load,
                 player2Stats, setPlayer2Stats,
                 player2Load, setPlayer2Load,
-                // resultsExist, setResults,
-                // results, changeResults,
                 player1Exists, setPlayer1Exist,
                 player1Results, changeP1Results,
                 player2Exists, setPlayer2Exist,

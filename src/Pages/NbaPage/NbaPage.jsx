@@ -37,6 +37,9 @@ export const NbaPage = () => {
                     />
                 )}
             </section>
+            {/* **MAYBE put Comparison button right here... clicking
+            this triggers a comparison table to be generated */}
+            {/* once comparison is created, it should scroll user down to the table */}
             <section className={nbaPage.playerCardSection}>
                 <PlayerCard 
 
@@ -46,6 +49,8 @@ export const NbaPage = () => {
                     isPlayer2={true}
                 />
             </section>
+
+            {/* could put comparison seciton here */}
 
 
         </div>

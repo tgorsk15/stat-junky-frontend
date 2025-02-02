@@ -12,12 +12,6 @@ import { PlayerCard } from "../../Components/PlayerCard/PlayerCard"
 
 export const NbaPage = () => {
     const { setLoading, player1Stats } = usePlayer()
-    // const [teamData, changeData] = useState(true) 
-    // const [isLoading, setLoading] = useState(false)
-
-    // set up state for activePlayer1
-    // const [player1Stats, setPlayer1Stats] = useState(null)
-    // const [player1Load, setPlayer1Load] = useState(false)
 
 
     // ** Maybe pre-load all player data instead:
@@ -29,12 +23,6 @@ export const NbaPage = () => {
         initialDataUpdatedAt: Date.now(),
         
     })
-
-    async function handleLoadTest() {
-        setLoading(true)
-        await refetch()
-        setLoading(false)
-    }
 
 
     return (
@@ -54,34 +42,12 @@ export const NbaPage = () => {
                 <PlayerCard 
 
                 />
-                {/* set up 2nd player card here */}
+
                 <PlayerCard 
                     isPlayer2={true}
                 />
             </section>
 
-
-
-
-
-
-            {/* <button
-                onClick={handleLoadTest}
-            >
-                Get teams
-            </button>
-
-            {isLoading && (
-                <div>Its Loading ...</div>
-            )}
-
-            {teamsData && (
-                <h2>teams is loaded</h2>
-            )}
-
-            {error && (
-                <div>An error occurred: {error.message}</div>
-            )} */}
 
         </div>
     )

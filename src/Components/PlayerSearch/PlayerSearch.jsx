@@ -42,7 +42,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer2Load(false)
             console.log('player 2 seasons', seasonStats)
             setPlayer2Stats(seasonStats)
-            
+
         } else {
             setPlayer1Load(true)
             const seasonStats = await getPlayerStats(player)
@@ -51,8 +51,10 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Stats(seasonStats)  
         }
         
-        
     }
+    // LEFT OFF HERE:
+    // need to figure out how to fix loading on player cards
+    // ...need to fix states of both search menus at once
 
 
     return (

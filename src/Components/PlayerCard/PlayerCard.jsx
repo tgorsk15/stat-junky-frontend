@@ -4,36 +4,39 @@ import { usePlayer } from "../../utils/usePlayer"
 
 import cardStyles from './playerCard.module.css'
 
-export const PlayerCard = () => {
+export const PlayerCard = ({isPlayer2}) => {
+    console.log('boolean player check:', isPlayer2)
+
     const { player1Load, player1Stats, player2Load, player2Stats } = usePlayer()
-    let currentPlayer = player1Stats;
+    let currentPlayerStats = player1Stats;
 
     // ** will have to revisit and refactor to accomadate for player2
     // will do this check to switch if necessary:
-    if (player1Stats) {
-        // currentPlayer = player2Stats
+    if (isPlayer2) {
+        currentPlayerStats = player2Stats
     }
     // maybe use a useEffect for the above?
 
-    if (!currentPlayer) {
+    if (!currentPlayerStats) {
         return
     }
 
     
 
-    const player = currentPlayer.playerData
-    const seasons = currentPlayer.seasons
+    const player = currentPlayerStats.playerData
+    const seasons = currentPlayerStats.seasons
     console.log("seasons layout", seasons)
 
 
     return (
         <>
+            {/* loading not working... need to figure out */}
             {player1Load ? (
                  <h2>Loading</h2>
 
             ) : (
                 
-                player1Stats && (
+                currentPlayerStats && (
                     <div className={cardStyles.cardContainer}>
                         <h2 className={cardStyles.playerTitle}>
                             {player.first_name} {player.last_name}
@@ -99,6 +102,7 @@ export const PlayerCard = () => {
 }
 
 PlayerCard.propTypes = {
-    playerStats: PropTypes.any,
-    playerLoad: PropTypes.bool
+    // playerStats: PropTypes.any,
+    // playerLoad: PropTypes.bool,
+    isPlayer2: PropTypes.bool
 }

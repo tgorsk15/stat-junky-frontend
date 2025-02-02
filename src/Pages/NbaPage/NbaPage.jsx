@@ -55,6 +55,9 @@ export const NbaPage = () => {
 
                 />
                 {/* set up 2nd player card here */}
+                <PlayerCard 
+                    isPlayer2={true}
+                />
             </section>
 
 

@@ -10,12 +10,10 @@ export const PlayerCard = ({isPlayer2}) => {
     const { player1Load, player1Stats, player2Load, player2Stats } = usePlayer()
     let currentPlayerStats = player1Stats;
 
-    // ** will have to revisit and refactor to accomadate for player2
-    // will do this check to switch if necessary:
+    // ** below checks to see if is player2
     if (isPlayer2) {
         currentPlayerStats = player2Stats
     }
-    // maybe use a useEffect for the above?
 
     if (!currentPlayerStats) {
         return

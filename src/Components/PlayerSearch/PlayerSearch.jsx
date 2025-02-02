@@ -10,7 +10,7 @@ import { PlayerResults } from "../PlayerResults/PlayerResults"
 import { getPlayerStats } from "../../utils/dataFetches"
 
 
-export const PlayerSearch = () => {
+export const PlayerSearch = ({isPlayer2}) => {
     const { setPlayer1Stats, setPlayer1Load, setPlayer2Stats, setPlayer2Load,
         setResults, changeResults } = usePlayer()
 
@@ -32,11 +32,17 @@ export const PlayerSearch = () => {
     }
 
 
-    async function handleResultClick(player, isPlayer2) {
+    async function handleResultClick(player) {
         setResults(false)
 
         if (isPlayer2) {
             console.log('im player 2')
+            setPlayer2Load(true)
+            const seasonStats = await getPlayerStats(player)
+            setPlayer2Load(false)
+            console.log('player 2 seasons', seasonStats)
+            setPlayer2Stats(seasonStats)
+            
         } else {
             setPlayer1Load(true)
             const seasonStats = await getPlayerStats(player)
@@ -76,6 +82,5 @@ export const PlayerSearch = () => {
 }
 
 PlayerSearch.propTypes = {
-    setPlayer1Stats: PropTypes.func,
-    setPlayer1Load: PropTypes.func
+    isPlayer2: PropTypes.bool
 }

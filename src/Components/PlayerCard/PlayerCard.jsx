@@ -30,9 +30,20 @@ export const PlayerCard = ({isPlayer2}) => {
                 {/* NEED TO convert % stats into %s... */}
             {currentPlayerStats && (
                 <div className={cardStyles.cardContainer}>
-                    <h2 className={cardStyles.playerTitle}>
-                        {player.first_name} {player.last_name}
-                    </h2>
+                    <div className={cardStyles.cardHeader}>
+                        <h2 className={cardStyles.playerTitle}>
+                            {player.first_name} {player.last_name}
+                        </h2>
+                        <div className={cardStyles.playerDetails}>
+                            <h5>{player.team.full_name}</h5>
+                            <h5>Jersey: {player.jersey_number}</h5>
+                            <h5>Position: {player.position}</h5>
+                            <h5>College: {player.college}</h5>
+                            <h5>Height: {player.height}</h5>
+                            <h5>Weight: {player.weight}</h5>
+                        </div>
+                    </div>
+                    
 
                     <div className={cardStyles.cardBody}>
                         <table className={cardStyles.dataTable}>

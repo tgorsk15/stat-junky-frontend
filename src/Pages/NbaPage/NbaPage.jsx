@@ -26,7 +26,7 @@ export const NbaPage = () => {
 
 
     return (
-        <div>
+        <div className={nbaPage.mainNbaContainer}>
             <section className={`${nbaPage.playerSearchSection}`}>
                 <PlayerSearch 
 

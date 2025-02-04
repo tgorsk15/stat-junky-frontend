@@ -36,11 +36,11 @@ export const PlayerCard = ({isPlayer2}) => {
                         </h2>
                         <div className={cardStyles.playerDetails}>
                             <h5>{player.team.full_name}</h5>
-                            <h5>Jersey: {player.jersey_number}</h5>
+                            <h5 className={cardStyles.jersey}>Jersey: {player.jersey_number}</h5>
                             <h5>Position: {player.position}</h5>
                             <h5>College: {player.college}</h5>
-                            <h5>Height: {player.height}</h5>
-                            <h5>Weight: {player.weight}</h5>
+                            <h5 className={cardStyles.height}>Height: {player.height}</h5>
+                            <h5>Weight: {player.weight}lb</h5>
                         </div>
                     </div>
                     

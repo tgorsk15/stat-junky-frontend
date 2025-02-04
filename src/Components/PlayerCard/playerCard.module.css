@@ -21,13 +21,16 @@
 
 .cardHeader {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
 
 }
 
 .playerTitle {
-    flex: content;
+    text-align: start;
+    margin-left: 30px;
+    margin-bottom: 9px;
 }
 /* TMW 2/3
 Continue to reformat the above sections
@@ -35,16 +38,23 @@ correctly to fit player's name */
 
 .playerDetails {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding-right: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* padding-right: 10px; */
+    padding-bottom: 12px;
+    padding-left: 30px;
 }
 
 .playerDetails > h5 {
     margin: 0px;
     margin-top: 10px;
+    justify-self: start;
 }
 
+.playerDetails > .jersey, 
+.playerDetails > .height {
+    justify-self: center;
+}
 
 .dataTable {
    

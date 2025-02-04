@@ -17,7 +17,7 @@
     height: 110px;
     width: 90%;
     background-color: rgb(83, 177, 83);
-    margin-bottom: 55px;
+    /* margin-bottom: 55px; */
 }
 
 .searchContainer {
@@ -71,6 +71,17 @@
 .playerLink {
     padding: 0px;
     background: none;
+}
+
+
+/* Create Button section */
+.createBtnContainer {
+    height: 95px;
+    width: 100%;
+}
+
+.createCompBtn {
+    
 }
 
 

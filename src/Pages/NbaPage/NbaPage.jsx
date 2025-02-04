@@ -3,7 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 
 import { getEnvVariable } from "../../utils/apiSetter"
 import { getTeams } from "../../utils/dataFetches"
-import nbaPage from "./nbaPage.module.css"
+import nbaStyles from "./nbaPage.module.css"
 import { usePlayer } from "../../utils/usePlayer"
 
 import { PlayerSearch } from "../../Components/PlayerSearch/PlayerSearch"
@@ -26,8 +26,8 @@ export const NbaPage = () => {
 
 
     return (
-        <div className={nbaPage.mainNbaContainer}>
-            <section className={`${nbaPage.playerSearchSection}`}>
+        <div className={nbaStyles.mainNbaContainer}>
+            <section className={`${nbaStyles.playerSearchSection}`}>
                 <PlayerSearch 
 
                 />
@@ -37,10 +37,18 @@ export const NbaPage = () => {
                     />
                 )}
             </section>
-            {/* **MAYBE put Comparison button right here... clicking
-            this triggers a comparison table to be generated */}
+            <div className={nbaStyles.createBtnContainer}>
+                <button 
+                    className={nbaStyles.createCompBtn}
+                    onClick={() => 'clicked'}
+                >
+                    Compare Players
+                </button>
+            </div>
+            
+
             {/* once comparison is created, it should scroll user down to the table */}
-            <section className={nbaPage.playerCardSection}>
+            <section className={nbaStyles.playerCardSection}>
                 <PlayerCard 
 
                 />

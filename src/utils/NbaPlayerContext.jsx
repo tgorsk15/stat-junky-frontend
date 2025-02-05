@@ -23,6 +23,8 @@ export const NbaPlayerProvider =({ children }) => {
     const [player2Exists, setPlayer2Exist] = useState(false)
     const [player2Results, changeP2Results] = useState('')
 
+    const [compareClicked, setClicked] = useState(false)
+
     return (
         <NbaPlayerContext.Provider
             value={{ 
@@ -34,7 +36,8 @@ export const NbaPlayerProvider =({ children }) => {
                 player1Exists, setPlayer1Exist,
                 player1Results, changeP1Results,
                 player2Exists, setPlayer2Exist,
-                player2Results, changeP2Results
+                player2Results, changeP2Results,
+                compareClicked, setClicked
             }}
         >
             { children }

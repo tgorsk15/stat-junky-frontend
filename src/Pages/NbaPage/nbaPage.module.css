@@ -76,12 +76,23 @@
 
 /* Create Button section */
 .createBtnContainer {
+    position: relative;
     height: 95px;
     width: 100%;
 }
 
 .createCompBtn {
-    
+    position: absolute;
+    top: 20px;
+    visibility: hidden;
+}
+
+.visibleBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
 }
 
 

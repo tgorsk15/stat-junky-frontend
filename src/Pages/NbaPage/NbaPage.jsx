@@ -8,10 +8,11 @@ import { usePlayer } from "../../utils/usePlayer"
 
 import { PlayerSearch } from "../../Components/PlayerSearch/PlayerSearch"
 import { PlayerCard } from "../../Components/PlayerCard/PlayerCard"
+import { PlayerCompare } from "../../Components/PlayerCompare/PlayerCompare"
 
 
 export const NbaPage = () => {
-    const { setLoading, player1Stats } = usePlayer()
+    const { player1Stats, player2Stats, compareClicked, setClicked } = usePlayer()
 
 
     // ** Maybe pre-load all player data instead:
@@ -23,6 +24,11 @@ export const NbaPage = () => {
         initialDataUpdatedAt: Date.now(),
         
     })
+
+    function handleCompareClick() {
+        console.log('comparing')
+        setClicked(true)
+    }
 
 
     return (
@@ -39,8 +45,9 @@ export const NbaPage = () => {
             </section>
             <div className={nbaStyles.createBtnContainer}>
                 <button 
-                    className={nbaStyles.createCompBtn}
-                    onClick={() => 'clicked'}
+                    className={
+                        `${player1Stats && player2Stats ? nbaStyles.visibleBtn : nbaStyles.createCompBtn}` }
+                    onClick={() => handleCompareClick()}
                 >
                     Compare Players
                 </button>
@@ -59,7 +66,11 @@ export const NbaPage = () => {
             </section>
 
             {/* could put comparison seciton here */}
-
+            {compareClicked && (
+                <PlayerCompare 
+                
+                />
+            )}
 
         </div>
     )

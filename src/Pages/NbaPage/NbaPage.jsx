@@ -50,6 +50,7 @@ export const NbaPage = () => {
                     onClick={() => handleCompareClick()}
                 >
                     Compare Players
+                    {/* put player icon here */}
                 </button>
             </div>
             
@@ -67,9 +68,12 @@ export const NbaPage = () => {
 
             {/* could put comparison seciton here */}
             {compareClicked && (
-                <PlayerCompare 
+                <section className={nbaStyles.playerCompSection}>
+                    <PlayerCompare 
+                        
+                    /> 
+                </section>
                 
-                />
             )}
 
         </div>

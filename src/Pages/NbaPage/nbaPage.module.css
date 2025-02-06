@@ -106,3 +106,10 @@
     justify-content: center;
     gap: 30px;
 }
+
+/* player comparison */
+.playerCompSection {
+    margin: 40px 0px;
+    padding: 20px 0px;
+    background-color: rosybrown;
+}

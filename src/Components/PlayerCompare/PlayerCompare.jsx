@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePlayer } from '../../utils/usePlayer'
+import getAverages from '../../utils/getAverages'
+
 import compareStyles from './playerComp.module.css'
 
 export const PlayerCompare = () => {
@@ -7,6 +9,24 @@ export const PlayerCompare = () => {
 
     const [player1Averages, setPlayer1Avgs] = useState(null)
     const [player2Averages, setPlayer2Avgs] = useState(null)
+
+    // if (!player1Stats || !player2Stats) {
+    //     return
+    // }
+    useEffect(() => {
+        if (!player1Stats || !player2Stats) {
+            return
+        }
+
+        const averages1 = getAverages(player1Stats)
+        const averages2 = getAverages(player2Stats)
+        // setPlayer1Avgs(averages1)
+        // setPlayer2Avgs(averages2)
+    }, [player1Stats, player2Stats])
+
+    // make copies of state variables?:
+    // const player1Current = [...player1Stats]
+    // const player2Curent = [...player2Stats]
 
     // need to set up function that gets the average stats for each player
     // ... this new averageState shouldn't need to exist outside of this component...

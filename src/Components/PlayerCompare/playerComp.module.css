@@ -1,3 +1,22 @@
+.compareContainer {
+    /* background-color: lime; */
+}
+
+.compareTable {
+    border-collapse: collapse;
+}
+
+.compareHeader, .compareBody > tr {
+    border-bottom: 1px solid black
+}
+
 .compareHeader th, .compareBody td {
-    
+    padding: 9px 11px;
+    border: none;
+    border-radius: 0px;
+    background-color: rgb(236, 239, 244);
+}
+
+.compareBody td {
+
 }

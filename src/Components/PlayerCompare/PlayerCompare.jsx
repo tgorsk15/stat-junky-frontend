@@ -16,7 +16,7 @@ export const PlayerCompare = () => {
             <table className={compareStyles.compareTable}>
                 <thead>
                     <tr className={compareStyles.compareHeader}>
-                        <th>Season</th>
+                        <th>Player</th>
                         <th>GS</th>
                         <th>PTS</th>
                         <th>RBS</th>
@@ -35,15 +35,23 @@ export const PlayerCompare = () => {
                 </thead>
                 <tbody className={compareStyles.compareBody}>
                     <tr>
+                        <td>Player 1</td>
                         <td>1</td>
                         <td>2</td>
                         <td>3</td>
                     </tr>
 
                     <tr>
+                        <td>Player 2</td>
                         <td>4</td>
                         <td>5</td>
                         <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>+/-</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
                     </tr>
                 </tbody>
             </table>

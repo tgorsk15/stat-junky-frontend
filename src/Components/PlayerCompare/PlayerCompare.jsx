@@ -19,7 +19,7 @@ export const PlayerCompare = () => {
         }
         console.log('getting averages for players')
         const averages1 = getAverages(player1Stats.seasons)
-        const averages2 = getAverages(player2Stats.seasons)
+        // const averages2 = getAverages(player2Stats.seasons)
         // setPlayer1Avgs(averages1)
         // setPlayer2Avgs(averages2)
     }, [player1Stats, player2Stats])

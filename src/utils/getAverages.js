@@ -5,9 +5,10 @@ export function getAverages(seasons) {
     // we can take averages of the first 19 items in each season array
     for (const season of seasons) {
         let statIndex = 0
-        for (const [key, value] of Object.entries(season)) {
-            console.log(season)
-            if (key !== 'season' || key !== 'player_id') {
+        for (const [key, value] of Object.entries(season[0])) {
+            console.log('pair:', key, value)
+            console.log('season and index', season, statIndex)
+            if (key !== 'season' && key !== 'player_id') {
                 if (key === 'min') {
                     const [minutes, seconds] = value.split(':')
                     const minutesAmount = Number(minutes) + Number(seconds) / 60
@@ -15,7 +16,9 @@ export function getAverages(seasons) {
                 } else {
                     averages[statIndex] += value
                 }
+            
             }
+            statIndex += 1
             console.log('averages after sums:', averages)
         }
     }

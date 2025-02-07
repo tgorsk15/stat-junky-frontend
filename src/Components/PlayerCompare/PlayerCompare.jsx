@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { usePlayer } from '../../utils/usePlayer'
-import getAverages from '../../utils/getAverages'
+import { getAverages } from '../../utils/getAverages'
 
 import compareStyles from './playerComp.module.css'
 
@@ -17,9 +17,9 @@ export const PlayerCompare = () => {
         if (!player1Stats || !player2Stats) {
             return
         }
-
-        const averages1 = getAverages(player1Stats)
-        const averages2 = getAverages(player2Stats)
+        console.log('getting averages for players')
+        const averages1 = getAverages(player1Stats.seasons)
+        const averages2 = getAverages(player2Stats.seasons)
         // setPlayer1Avgs(averages1)
         // setPlayer2Avgs(averages2)
     }, [player1Stats, player2Stats])

@@ -17,7 +17,6 @@ export const PlayerCompare = () => {
         if (!player1Stats || !player2Stats) {
             return
         }
-        console.log('getting averages for players')
         const averages1 = getAverages(player1Stats.seasons)
         // const averages2 = getAverages(player2Stats.seasons)
         // setPlayer1Avgs(averages1)

@@ -22,7 +22,6 @@ export const PlayerCard = ({isPlayer2}) => {
     
     const player = currentPlayerStats.playerData
     const seasons = currentPlayerStats.seasons
-    console.log("seasons layout", seasons)
 
 
     return (

@@ -1,7 +1,7 @@
 export function getAverages(seasons) {
     console.log('average of this player:', seasons)
     const averages = Array(20).fill(0)
-    // we can take averages of the first 19 items in each season array
+    // we can take averages of 22/24 of the stats in each season
     for (const season of seasons) {
         let statIndex = 0
         for (const [key, value] of Object.entries(season[0])) {
@@ -24,5 +24,6 @@ export function getAverages(seasons) {
         averages[i] = averages[i] / seasons.length
     }
     console.log('newAverages:', averages)
+    return averages
 
 }

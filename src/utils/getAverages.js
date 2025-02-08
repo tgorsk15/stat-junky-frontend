@@ -34,7 +34,6 @@ export function getAverages(seasons) {
 
     // new version
     for (const season of seasons) {
-        // let statIndex = 0
         for (const [key, value] of Object.entries(season[0])) {
             if (key !== 'season' && key !== 'player_id') {
                 if (key === 'min') {
@@ -46,7 +45,6 @@ export function getAverages(seasons) {
                 }
             
             }
-            // statIndex += 1
         }
         console.log('averages after sums:', averages)
     }
@@ -56,11 +54,10 @@ export function getAverages(seasons) {
     // logic is incorrect here... only divides as many stats as there
     // are seasons
     // ... its ok to divide # of games played, it'll give a season avg
-    for (let i = 0; i < seasons.length; i++) {
-        // implement check for 
-        // averages[i] = averages[i] / seasons.length
+    for (const [key, value] of Object.entries(averages)) {
+        averages[key] = averages[key] / seasons.length
     }
     console.log('newAverages:', averages)
     return averages
-
+    
 }

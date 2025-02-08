@@ -40,9 +40,9 @@ export function getAverages(seasons) {
                 if (key === 'min') {
                     const [minutes, seconds] = value.split(':')
                     const minutesAmount = Number(minutes) + Number(seconds) / 60
-                    averages.key += minutesAmount
+                    averages[key] += minutesAmount
                 } else {
-                    averages.key += value
+                    averages[key] += value
                 }
             
             }
@@ -52,16 +52,13 @@ export function getAverages(seasons) {
     }
 
     // TMW 2/8:
-    // plug my new solution into Claude and ask why its not working
-    // ... currently doesnt change anything in averages
 
-    
     // logic is incorrect here... only divides as many stats as there
     // are seasons
     // ... its ok to divide # of games played, it'll give a season avg
     for (let i = 0; i < seasons.length; i++) {
         // implement check for 
-        averages[i] = averages[i] / seasons.length
+        // averages[i] = averages[i] / seasons.length
     }
     console.log('newAverages:', averages)
     return averages

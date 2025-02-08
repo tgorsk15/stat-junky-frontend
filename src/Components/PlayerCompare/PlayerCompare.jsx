@@ -20,6 +20,8 @@ export const PlayerCompare = () => {
         setPlayer2Avgs(averages2)
     }, [player1Stats, player2Stats])
 
+    console.log('final average data:', player1Averages, player2Averages)
+
 
     return (
         <div className={compareStyles.compareContainer}>

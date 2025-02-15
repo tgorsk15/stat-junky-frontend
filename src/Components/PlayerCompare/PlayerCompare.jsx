@@ -11,6 +11,7 @@ export const PlayerCompare = () => {
     const [player2Averages, setPlayer2Avgs] = useState(null)
 
     useEffect(() => {
+        console.log('use effect running')
         if (!player1Stats || !player2Stats) {
             return
         }
@@ -24,7 +25,9 @@ export const PlayerCompare = () => {
 
 
     return (
+        
         <div className={compareStyles.compareContainer}>
+        {player1Averages && player2Averages ? (
             <table className={compareStyles.compareTable}>
                 <thead>
                     <tr className={compareStyles.compareHeader}>
@@ -93,7 +96,11 @@ export const PlayerCompare = () => {
                     </tr>
                 </tbody>
             </table>
+        
+        ) : null }
         </div>
+        
+        
     )
 
 }

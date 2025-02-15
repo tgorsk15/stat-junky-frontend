@@ -66,11 +66,11 @@ export const NbaPage = () => {
                 />
             </section>
 
-            {/* could put comparison seciton here */}
+            {/* comparison section */}
             {compareClicked && (
                 <section className={nbaStyles.playerCompSection}>
                     <PlayerCompare 
-                        
+
                     /> 
                 </section>
                 

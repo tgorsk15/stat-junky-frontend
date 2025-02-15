@@ -1,9 +1,6 @@
 export function getAverages(seasons) {
     console.log('average of this player:', seasons)
 
-
-    // const averages = Array(20).fill(0)
-    // new attempt:
     const averages = {
         ast: 0, blk: 0, dreb: 0, fg3_pct: 0,
         fg3a: 0, fg3m: 0, fg_pct: 0, fga: 0, 
@@ -43,21 +40,18 @@ export function getAverages(seasons) {
                 } else {
                     averages[key] += value
                 }
+                // ** PROBABLY make a separate function for converting shooting stats
+                // into %s... can use this in initial stat generation as well
             
             }
         }
         console.log('averages after sums:', averages)
     }
 
-    // TMW 2/8:
-
-    // logic is incorrect here... only divides as many stats as there
-    // are seasons
-    // ... its ok to divide # of games played, it'll give a season avg
     for (const [key, value] of Object.entries(averages)) {
         averages[key] = averages[key] / seasons.length
     }
     console.log('newAverages:', averages)
     return averages
-    
+
 }

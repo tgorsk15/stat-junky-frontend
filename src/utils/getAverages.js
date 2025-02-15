@@ -1,3 +1,5 @@
+import { getPercent } from "./getPercent"
+
 export function getAverages(seasons) {
     console.log('average of this player:', seasons)
 
@@ -50,6 +52,15 @@ export function getAverages(seasons) {
 
     for (const [key, value] of Object.entries(averages)) {
         averages[key] = averages[key] / seasons.length
+
+
+        // FIX averages before adding the below
+        if (key === 'fg_pct' || key === 'fg3_pct' || key === 'ft_pct') {
+            console.log('%', averages[key])
+            const percentStat = getPercent(averages[key])
+            averages[key] = percentStat
+        }
+        
     }
     console.log('newAverages:', averages)
     return averages

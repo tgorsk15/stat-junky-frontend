@@ -26,7 +26,6 @@ export const PlayerSearch = ({isPlayer2}) => {
 
         const response = await playersQuery(newQuery)
         const data = response.players.data
-        console.log('here is data:', data)
 
         if (isPlayer2) {
             setPlayer2Exist(true)
@@ -42,7 +41,6 @@ export const PlayerSearch = ({isPlayer2}) => {
 
         if (isPlayer2) {
             setPlayer2Exist(false)
-            console.log('im player 2')
             setPlayer2Load(true)
             const seasonStats = await getPlayerStats(player)
             setPlayer2Load(false)

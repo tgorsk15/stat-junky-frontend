@@ -51,16 +51,20 @@ export function getAverages(seasons) {
     }
 
     for (const [key, value] of Object.entries(averages)) {
-        averages[key] = averages[key] / seasons.length
-
+        averages[key] = (averages[key] / seasons.length)
 
         // FIX averages before adding the below
         if (key === 'fg_pct' || key === 'fg3_pct' || key === 'ft_pct') {
+            averages[key] = averages[key].toFixed(4)
             console.log('%', averages[key])
             const percentStat = getPercent(averages[key])
             averages[key] = percentStat
+            console.log('revised stat', averages[key])
+
+        } else if (key !== 'games_played') {
+            averages[key] = averages[key].toFixed(2)
         }
-        
+
     }
     console.log('newAverages:', averages)
     return averages

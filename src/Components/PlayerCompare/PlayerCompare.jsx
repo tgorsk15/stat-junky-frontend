@@ -10,6 +10,14 @@ export const PlayerCompare = () => {
     const [player1Averages, setPlayer1Avgs] = useState(null)
     const [player2Averages, setPlayer2Avgs] = useState(null)
 
+    let fgPercent1;
+    let fgPercent2;
+    let fg3Percent1;
+    let fg3Percent2;
+    let ftPercent1;
+    let ftPercent2;
+
+
     useEffect(() => {
         console.log('use effect running')
         if (!player1Stats || !player2Stats) {
@@ -23,9 +31,16 @@ export const PlayerCompare = () => {
 
     console.log('final average data:', player1Averages, player2Averages)
 
-    // if (player1Averages && player2Averages) {
-    //     const fg1 = parseFloat(player1Averages.fg_pct)
-    // }
+    if (player1Averages && player2Averages) {
+        fgPercent1 = parseFloat(player1Averages.fg_pct)
+        fgPercent2 = parseFloat(player2Averages.fg_pct)
+
+        fg3Percent1 = parseFloat(player1Averages.fg3_pct)
+        fg3Percent2 = parseFloat(player2Averages.fg3_pct)
+
+        ftPercent1 = parseFloat(player1Averages.ft_pct)
+        ftPercent2 = parseFloat(player2Averages.ft_pct)
+    }
 
 
     return (
@@ -122,19 +137,19 @@ export const PlayerCompare = () => {
                             {(player1Averages.fgm - player2Averages.fgm).toFixed(2)} 
                         </td>
                         <td>
-                            {(player1Averages.fg_pct - player2Averages.fg_pct).toFixed(2)} 
+                            {(fgPercent1 - fgPercent2).toFixed(2) + '%'}
                         </td>
                         <td>
                             {(player1Averages.fg3m - player2Averages.fg3m).toFixed(2)} 
                         </td>
                         <td>
-                            {(player1Averages.fg3_pct - player2Averages.fg3_pct).toFixed(2)} 
+                            {(fg3Percent1 - fg3Percent2).toFixed(2) + '%'} 
                         </td>
                         <td>
                             {(player1Averages.ftm - player2Averages.ftm).toFixed(2)} 
                         </td>
                         <td>
-                            {(player1Averages.ft_pct - player2Averages.ft_pct).toFixed(2)} 
+                            {(ftPercent1 - ftPercent2).toFixed(2) + '%'}  
                         </td>
                     </tr>
                 </tbody>

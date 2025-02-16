@@ -11,26 +11,6 @@ export function getAverages(seasons) {
         pts: 0, reb: 0, stl: 0, turnover: 0
     }
 
-
-    // may need to revise and use object
-    // for (const season of seasons) {
-    //     let statIndex = 0
-    //     for (const [key, value] of Object.entries(season[0])) {
-    //         if (key !== 'season' && key !== 'player_id') {
-    //             if (key === 'min') {
-    //                 const [minutes, seconds] = value.split(':')
-    //                 const minutesAmount = Number(minutes) + Number(seconds) / 60
-    //                 averages[statIndex] += minutesAmount
-    //             } else {
-    //                 averages[statIndex] += value
-    //             }
-            
-    //         }
-    //         statIndex += 1
-    //     }
-    //     console.log('averages after sums:', averages)
-    // }
-
     // new version
     for (const season of seasons) {
         for (const [key, value] of Object.entries(season[0])) {
@@ -42,8 +22,6 @@ export function getAverages(seasons) {
                 } else {
                     averages[key] += value
                 }
-                // ** PROBABLY make a separate function for converting shooting stats
-                // into %s... can use this in initial stat generation as well
             
             }
         }

@@ -46,6 +46,7 @@ export const PlayerCompare = () => {
     return (
         
         <div className={compareStyles.compareContainer}>
+            <h2 className={compareStyles.compareTitle}>Career Comparison</h2>
         {player1Averages && player2Averages ? (
             <table className={compareStyles.compareTable}>
                 <thead>
@@ -109,7 +110,7 @@ export const PlayerCompare = () => {
                     </tr>
                     <tr className={compareStyles.comparisonRow}>
                         <td>+/-</td>
-                        <td>
+                        <td className={``}>
                             {player1Averages.games_played - player2Averages.games_played} 
                         </td>
                         <td>

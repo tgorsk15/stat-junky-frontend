@@ -110,46 +110,74 @@ export const PlayerCompare = () => {
                     </tr>
                     <tr className={compareStyles.comparisonRow}>
                         <td>+/-</td>
-                        <td className={``}>
+
+                        <td className={`${player1Averages.games_played - player2Averages.games_played > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {player1Averages.games_played - player2Averages.games_played} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.pts - player2Averages.pts > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.pts - player2Averages.pts).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.reb - player2Averages.reb > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.reb - player2Averages.reb).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.oreb - player2Averages.oreb > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.oreb - player2Averages.oreb).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.ast - player2Averages.ast > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.ast - player2Averages.ast).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.stl - player2Averages.stl > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.stl - player2Averages.stl).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.blk - player2Averages.blk > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.blk - player2Averages.blk).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.turnover - player2Averages.turnover > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.turnover - player2Averages.turnover).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.fgm - player2Averages.fgm > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.fgm - player2Averages.fgm).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${(fgPercent1 - fgPercent2).toFixed(2) > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(fgPercent1 - fgPercent2).toFixed(2) + '%'}
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.fg3m - player2Averages.fg3m > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.fg3m - player2Averages.fg3m).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${(fg3Percent1 - fg3Percent2).toFixed(2) > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(fg3Percent1 - fg3Percent2).toFixed(2) + '%'} 
                         </td>
-                        <td>
+
+                        <td className={`${player1Averages.ftm - player2Averages.ftm > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(player1Averages.ftm - player2Averages.ftm).toFixed(2)} 
                         </td>
-                        <td>
+
+                        <td className={`${(ftPercent1 - ftPercent2).toFixed(2) > 0 ? 
+                            compareStyles.positive : compareStyles.negative}`}>
                             {(ftPercent1 - ftPercent2).toFixed(2) + '%'}  
                         </td>
                     </tr>

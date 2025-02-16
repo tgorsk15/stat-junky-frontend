@@ -23,6 +23,10 @@ export const PlayerCompare = () => {
 
     console.log('final average data:', player1Averages, player2Averages)
 
+    // if (player1Averages && player2Averages) {
+    //     const fg1 = parseFloat(player1Averages.fg_pct)
+    // }
+
 
     return (
         
@@ -88,17 +92,59 @@ export const PlayerCompare = () => {
                         <td> {player2Averages.ftm} </td>
                         <td> {player2Averages.ft_pct} </td>
                     </tr>
-                    <tr>
+                    <tr className={compareStyles.comparisonRow}>
                         <td>+/-</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
+                        <td>
+                            {player1Averages.games_played - player2Averages.games_played} 
+                        </td>
+                        <td>
+                            {(player1Averages.pts - player2Averages.pts).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.reb - player2Averages.reb).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.oreb - player2Averages.oreb).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.ast - player2Averages.ast).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.stl - player2Averages.stl).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.blk - player2Averages.blk).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.turnover - player2Averages.turnover).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.fgm - player2Averages.fgm).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.fg_pct - player2Averages.fg_pct).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.fg3m - player2Averages.fg3m).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.fg3_pct - player2Averages.fg3_pct).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.ftm - player2Averages.ftm).toFixed(2)} 
+                        </td>
+                        <td>
+                            {(player1Averages.ft_pct - player2Averages.ft_pct).toFixed(2)} 
+                        </td>
                     </tr>
                 </tbody>
             </table>
         
         ) : null }
         </div>
+        // TMW 2/16:
+        // start working on last row of table
+        // eventually need to build a "back out" funciton on player search
         
         
     )

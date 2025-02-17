@@ -39,7 +39,9 @@ export function getAverages(seasons) {
             averages[key] = percentStat
             console.log('revised stat', averages[key])
 
-        } else if (key !== 'games_played') {
+        } else if (key === 'games_played') {
+            averages[key] = averages[key].toFixed(1)
+        } else {
             averages[key] = averages[key].toFixed(2)
         }
 

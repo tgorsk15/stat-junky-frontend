@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 
 import { getEnvVariable } from "../../utils/apiSetter"
@@ -14,7 +14,7 @@ import { PlayerCompare } from "../../Components/PlayerCompare/PlayerCompare"
 export const NbaPage = () => {
     const { player1Stats, player2Stats, compareClicked, setClicked } = usePlayer()
 
-    const compareRef = useRef()
+    const compareRef = useRef(null)
 
 
     // ** Maybe pre-load all player data instead:
@@ -27,11 +27,26 @@ export const NbaPage = () => {
         
     })
 
+    const executeScroll = () => compareRef.current.scrollIntoView({ behavior: 'smooth'})
+
+    useEffect(() => {
+        if (compareClicked && compareRef.current) {
+            // compareRef.current.scrollIntoView({ behavior: 'smooth'})
+
+            // maybe create an if statement where this only executes if 
+            // compareClicked goes to true:
+            window.scroll({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+            // executeScroll()
+        }
+    }, [compareClicked])
+
     function handleCompareClick() {
         console.log('comparing')
-        compareRef.current?.scrollIntoView({ behavior: 'smooth'})
         setClicked(true)
-        
     }
 
 
@@ -51,7 +66,10 @@ export const NbaPage = () => {
                 <button 
                     className={
                         `${player1Stats && player2Stats ? nbaStyles.visibleBtn : nbaStyles.createCompBtn}` }
-                    onClick={() => handleCompareClick()}
+                    onClick={() => {
+                        handleCompareClick()
+                        // executeScroll()
+                    }}
                 >
                     Compare Players
                     {/* put player icon here */}
@@ -72,13 +90,23 @@ export const NbaPage = () => {
 
             {/* comparison section */}
             {compareClicked && (
-                <section className={nbaStyles.playerCompSection} ref={compareRef}>
+                <>
+                <section className={nbaStyles.playerCompSection}>
                     <PlayerCompare 
 
                     /> 
                 </section>
+
+
                 
+                </>
+
             )}
+            <section className={nbaStyles.fillerSection}>
+                <div ref={compareRef} className={nbaStyles.fillerContainer}>
+                </div>
+            </section>
+            
 
         </div>
     )

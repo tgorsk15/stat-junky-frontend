@@ -186,13 +186,9 @@ export const PlayerCompare = () => {
         
         ) : null }
         </div>
-        // TMW 2/16:
-        // start working on last row of table
+        // TMW 2/18:
+        // continue figuring out scroll feature
         // eventually need to build a "back out" funciton on player search
-
-        // LEFT OFF HERE:
-        // need to provide fixed decimal value to GS... decimals go crazy for some players
-        
         
     )
 

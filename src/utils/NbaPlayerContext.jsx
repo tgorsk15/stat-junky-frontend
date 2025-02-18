@@ -15,6 +15,7 @@ export const NbaPlayerProvider =({ children }) => {
     const [player2Load, setPlayer2Load] = useState(false)
 
     // playerSearch states
+    const [searchActive, setSearchState] = useState(false)
     // player1
     const [player1Exists, setPlayer1Exist] = useState(false)
     const [player1Results, changeP1Results] = useState('')
@@ -33,10 +34,13 @@ export const NbaPlayerProvider =({ children }) => {
                 player1Load, setPlayer1Load,
                 player2Stats, setPlayer2Stats,
                 player2Load, setPlayer2Load,
+
+                searchActive, setSearchState,
                 player1Exists, setPlayer1Exist,
                 player1Results, changeP1Results,
                 player2Exists, setPlayer2Exist,
                 player2Results, changeP2Results,
+
                 compareClicked, setClicked
             }}
         >

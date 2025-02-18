@@ -31,16 +31,12 @@ export const NbaPage = () => {
 
     useEffect(() => {
         if (compareClicked && compareRef.current) {
-            // compareRef.current.scrollIntoView({ behavior: 'smooth'})
-
-            // maybe create an if statement where this only executes if 
-            // compareClicked goes to true:
             window.scroll({
                 top: document.body.scrollHeight,
                 left: 0,
                 behavior: 'smooth'
             });
-            // setClicked(false)
+
         }
     }, [compareClicked])
 
@@ -68,12 +64,10 @@ export const NbaPage = () => {
                         `${player1Stats && player2Stats ? nbaStyles.visibleBtn : nbaStyles.createCompBtn}` }
                     onClick={() => {
                         handleCompareClick()
-                        // executeScroll()
                     }}
                 >
-                    {/* Compare Players */}
-                    {compareClicked ? 'Go to Comparison' : 'Compare Players'}
                     {/* put player icon here */}
+                    {compareClicked ? 'Go to Comparison' : 'Compare Players'}
                 </button>
             </div>
             
@@ -91,16 +85,11 @@ export const NbaPage = () => {
 
             {/* comparison section */}
             {compareClicked && (
-                <>
                 <section className={nbaStyles.playerCompSection}>
                     <PlayerCompare 
 
                     /> 
                 </section>
-
-
-                
-                </>
 
             )}
             <section className={nbaStyles.fillerSection}>

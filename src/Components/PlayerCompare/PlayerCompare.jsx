@@ -187,8 +187,9 @@ export const PlayerCompare = () => {
         ) : null }
         </div>
         // TMW 2/18:
-        // continue figuring out scroll feature
-        // eventually need to build a "back out" funciton on player search
+        // build a "back out" funciton on player search
+        // change compare button after click
+        // eventually create loading animations
         
     )
 

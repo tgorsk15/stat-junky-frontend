@@ -27,7 +27,7 @@ export const NbaPage = () => {
         
     })
 
-    const executeScroll = () => compareRef.current.scrollIntoView({ behavior: 'smooth'})
+    // const executeScroll = () => compareRef.current.scrollIntoView({ behavior: 'smooth'})
 
     useEffect(() => {
         if (compareClicked && compareRef.current) {
@@ -40,7 +40,7 @@ export const NbaPage = () => {
                 left: 0,
                 behavior: 'smooth'
             });
-            // executeScroll()
+            // setClicked(false)
         }
     }, [compareClicked])
 
@@ -71,7 +71,8 @@ export const NbaPage = () => {
                         // executeScroll()
                     }}
                 >
-                    Compare Players
+                    {/* Compare Players */}
+                    {compareClicked ? 'Go to Comparison' : 'Compare Players'}
                     {/* put player icon here */}
                 </button>
             </div>

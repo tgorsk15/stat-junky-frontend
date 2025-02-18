@@ -81,7 +81,7 @@
 /* Create Button section */
 .createBtnContainer {
     position: relative;
-    height: 95px;
+    height: 120px;
     width: 100%;
 }
 
@@ -97,6 +97,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     visibility: visible;
+    padding: 12px 14px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 

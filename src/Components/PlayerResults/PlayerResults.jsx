@@ -11,6 +11,12 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
     const playerExists = isPlayer2 ? player2Exists : player1Exists
     const playerResults = isPlayer2 ? player2Results : player1Results
 
+    let emptyResults = false
+    if (playerResults.length === 0) {
+        emptyResults = true
+    }
+
+
     return (
         <div className={`{nbaPage.resultsBox} ${playerExists ? nbaPage.activeList : ''}`}>
             {playerExists && (
@@ -29,14 +35,13 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                     X
                 </button>
             )}
-           {playerExists ? (
+           {playerExists && (
                                
                 playerResults.map((player) => {
                     return (
                         <div key={player.id} className={nbaPage.playerResult}>
                             <button 
                                 className={nbaPage.playerLink}
-                                // could add to onClick function to make menu dissapear
                                 onClick={() => handleResultClick(player)}
                             >
                                 {player.first_name} {player.last_name}
@@ -45,9 +50,14 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                     )
                 })
                     
-            ) : (
-                <h2>No Results</h2>
+            ) }
+
+            {playerExists && emptyResults && (
+                <h2 className={nbaPage.noResultsHeader}>
+                    No results
+                </h2>
             )}
+
         </div>
     )
 

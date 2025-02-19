@@ -29,6 +29,8 @@ export const NbaPage = () => {
 
     // const executeScroll = () => compareRef.current.scrollIntoView({ behavior: 'smooth'})
 
+    // **MAYBE put the below scroll action back into onClick function... so user can keep clicking
+    // the button and have it scroll down
     useEffect(() => {
         if (compareClicked && compareRef.current) {
             window.scroll({
@@ -103,4 +105,7 @@ export const NbaPage = () => {
 
         </div>
     )
+    // TMW 2/19:
+    // adjust playerSearch box so it appears while data is still being fetched
+    // ... this will allow us to put loading message in that gives feedback to the user
 }

@@ -53,9 +53,12 @@ export const NbaPage = () => {
 
                 />
                 {player1Stats && (
-                    <PlayerSearch 
-                        isPlayer2={true}
-                    />
+                    <div className={nbaStyles.fadeInContainer}>
+                        <PlayerSearch 
+                            isPlayer2={true}
+                        />
+                    </div>
+                    
                 )}
             </section>
             <div className={nbaStyles.createBtnContainer}>

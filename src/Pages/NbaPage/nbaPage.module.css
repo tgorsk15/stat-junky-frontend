@@ -17,7 +17,6 @@
     height: 110px;
     width: 90%;
     background-color: rgb(83, 177, 83);
-    /* margin-bottom: 55px; */
 }
 
 .searchContainer {
@@ -27,6 +26,39 @@
     align-items: center;
     gap: 20px;
 }
+
+.fadeInContainer {
+    animation: fadeIn 0.5s ease-in;
+    opacity: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.searchContainer2 {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(195, 111, 59);
+
+}
+
+/* .searchContainer2 > form {
+    background-color: rgb(195, 111, 59);
+} */
+
 
 .playerSearchForm {
     

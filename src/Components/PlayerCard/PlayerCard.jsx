@@ -27,6 +27,7 @@ export const PlayerCard = ({isPlayer2}) => {
     return (
         <>
                 {/* NEED TO convert % stats into %s... */}
+                {/* ...hook it up to getPercent function I made */}
             {currentPlayerStats && (
                 <div className={cardStyles.cardContainer}>
                     <div className={cardStyles.cardHeader}>

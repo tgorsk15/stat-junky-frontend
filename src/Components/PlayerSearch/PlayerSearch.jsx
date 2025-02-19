@@ -60,7 +60,10 @@ export const PlayerSearch = ({isPlayer2}) => {
 
 
     return (
-        <div className={nbaPage.searchContainer}>
+        <div 
+            // className={nbaPage.searchContainer}
+            className={`${isPlayer2 ? nbaPage.searchContainer2 : nbaPage.searchContainer}`}
+        >
             <h3>{isPlayer2 ? 'Add Player 2:' : 'Add Player 1:'}</h3>
             <form
                 onSubmit={handleSearch}

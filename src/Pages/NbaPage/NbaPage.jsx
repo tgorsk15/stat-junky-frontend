@@ -105,7 +105,5 @@ export const NbaPage = () => {
 
         </div>
     )
-    // TMW 2/19:
-    // adjust playerSearch box so it appears while data is still being fetched
-    // ... this will allow us to put loading message in that gives feedback to the user
+   
 }

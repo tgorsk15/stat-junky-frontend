@@ -54,6 +54,10 @@
     justify-self: center;
 }
 
+.playerDetails > .college {
+    justify-self: start;
+}
+
 .dataTable {
    
 }

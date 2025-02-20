@@ -24,7 +24,6 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                     className={nbaPage.exitSearchBtn}
                     onClick={() => {
                         console.log('clicking back')
-                        // setSearchState(false)
                         if (isPlayer2) {
                             changeP2Results('')
                             setPlayer2Exist(false)
@@ -32,7 +31,6 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                             changeP1Results('')
                             setPlayer1Exist(false)
                         }
-                        // playerResults = null
                     }}
                 >
                     X
@@ -47,7 +45,6 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                                 className={nbaPage.playerLink}
                                 onClick={() => {
                                     handleResultClick(player)
-                                    // playerResults = null
                                 }}
                             >
                                 {player.first_name} {player.last_name}
@@ -60,6 +57,10 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
 
             {playerExists && emptyResults && (
                 <h2 className={nbaPage.noResultsHeader}>
+                    {/* put in loading animation here */}
+                    {/* ...actually that needs to be a separate conditonal or state,
+                    because I need to still have a NoResults message */}
+                    {/* OR I could try putting another conditional in here... */}
                     No results
                 </h2>
             )}

@@ -113,7 +113,7 @@ export const PlayerCompare = () => {
 
                         <td className={`${player1Averages.games_played - player2Averages.games_played > 0 ? 
                             compareStyles.positive : compareStyles.negative}`}>
-                            {player1Averages.games_played - player2Averages.games_played} 
+                            {(player1Averages.games_played - player2Averages.games_played).toFixed(1)} 
                         </td>
 
                         <td className={`${player1Averages.pts - player2Averages.pts > 0 ? 

@@ -12,7 +12,8 @@ import { getPlayerStats } from "../../utils/dataFetches"
 
 export const PlayerSearch = ({isPlayer2}) => {
     const { setPlayer1Stats, setPlayer1Load, setPlayer2Stats, setPlayer2Load,
-        setPlayer1Exist, changeP1Results,  setPlayer2Exist, changeP2Results} = usePlayer()
+        setPlayer1Exist, changeP1Results,  
+        setPlayer2Exist, changeP2Results} = usePlayer()
 
     const [query, changeQuery] = useState("")
 
@@ -24,14 +25,18 @@ export const PlayerSearch = ({isPlayer2}) => {
         const newQuery = formData.get('searchBox')
         changeQuery(newQuery)
 
+        if (isPlayer2) {
+            setPlayer2Exist(true)
+        } else {
+            setPlayer1Exist(true)
+        }
+
         const response = await playersQuery(newQuery)
         const data = response.players.data
 
         if (isPlayer2) {
-            setPlayer2Exist(true)
             changeP2Results(data)
         } else {
-            setPlayer1Exist(true)
             changeP1Results(data)
         }
     }

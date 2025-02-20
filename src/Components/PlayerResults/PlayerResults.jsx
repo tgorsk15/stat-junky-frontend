@@ -5,11 +5,11 @@ import { usePlayer } from "../../utils/usePlayer"
 
 export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
     const { player1Exists, player1Results, player2Exists, player2Results,
-        setPlayer1Exist, setPlayer2Exist
+        setPlayer1Exist, setPlayer2Exist, changeP1Results, changeP2Results
      } = usePlayer()
 
     const playerExists = isPlayer2 ? player2Exists : player1Exists
-    const playerResults = isPlayer2 ? player2Results : player1Results
+    let playerResults = isPlayer2 ? player2Results : player1Results
 
     let emptyResults = false
     if (playerResults.length === 0) {
@@ -26,23 +26,29 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
                         console.log('clicking back')
                         // setSearchState(false)
                         if (isPlayer2) {
+                            changeP2Results('')
                             setPlayer2Exist(false)
                         } else {
+                            changeP1Results('')
                             setPlayer1Exist(false)
                         }
+                        // playerResults = null
                     }}
                 >
                     X
                 </button>
             )}
-           {playerExists && (
+           {playerExists && playerResults && (
                                
                 playerResults.map((player) => {
                     return (
                         <div key={player.id} className={nbaPage.playerResult}>
                             <button 
                                 className={nbaPage.playerLink}
-                                onClick={() => handleResultClick(player)}
+                                onClick={() => {
+                                    handleResultClick(player)
+                                    // playerResults = null
+                                }}
                             >
                                 {player.first_name} {player.last_name}
                             </button>

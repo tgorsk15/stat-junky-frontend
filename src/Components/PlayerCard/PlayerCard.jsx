@@ -13,7 +13,21 @@ export const PlayerCard = ({isPlayer2}) => {
 
     if (isLoading) {
         return (
-            <h2>Loading {isPlayer2 ? 'player 2' : 'player 1'}</h2>
+            <div className={cardStyles.cardLoadContainer}>
+                {/* <h2>Retrieving {isPlayer2 ? 'player 2' : 'player 1'}</h2> */}
+                <h2>Retrieving Player Data</h2>
+                <div className={cardStyles.loadSpinner}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            
         )
     }
 

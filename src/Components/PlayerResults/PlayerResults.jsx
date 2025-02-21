@@ -56,10 +56,16 @@ export const PlayerResults = ({ handleResultClick, isPlayer2, searchLoading }) =
             ) }
 
             {playerExists && emptyResults && (
-                // do another check here:
                 searchLoading ? (
-                    <div>
-                        We load
+                    <div className={nbaPage.searchSpinner}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
                 ) : (
                     <h2 className={nbaPage.noResultsHeader}>

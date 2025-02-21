@@ -76,8 +76,6 @@ export const NbaPage = () => {
                 </button>
             </div>
             
-
-            {/* once comparison is created, it should scroll user down to the table */}
             <section className={nbaStyles.playerCardSection}>
                 <PlayerCard 
 

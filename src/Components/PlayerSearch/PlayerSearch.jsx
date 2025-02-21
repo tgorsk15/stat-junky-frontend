@@ -16,6 +16,8 @@ export const PlayerSearch = ({isPlayer2}) => {
         setPlayer2Exist, changeP2Results} = usePlayer()
 
     const [query, changeQuery] = useState("")
+    // could set up loading state here for PlayerResults if I want
+    const [searchLoading, setSearchLoading] = useState(false)
 
 
     async function handleSearch(e) {
@@ -31,8 +33,10 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Exist(true)
         }
 
+        setSearchLoading(true)
         const response = await playersQuery(newQuery)
         const data = response.players.data
+        setSearchLoading(false)
 
         if (isPlayer2) {
             changeP2Results(data)
@@ -88,6 +92,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             <PlayerResults 
                 handleResultClick={handleResultClick}
                 isPlayer2={isPlayer2}
+                searchLoading={searchLoading}
             />
         </div>
     )

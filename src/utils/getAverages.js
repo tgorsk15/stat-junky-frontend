@@ -1,8 +1,6 @@
 import { getPercent } from "./getPercent"
 
 export function getAverages(seasons) {
-    console.log('average of this player:', seasons)
-
     const averages = {
         ast: 0, blk: 0, dreb: 0, fg3_pct: 0,
         fg3a: 0, fg3m: 0, fg_pct: 0, fga: 0, 
@@ -25,7 +23,7 @@ export function getAverages(seasons) {
             
             }
         }
-        console.log('averages after sums:', averages)
+        // console.log('averages after sums:', averages)
     }
 
     for (const [key, value] of Object.entries(averages)) {
@@ -34,10 +32,8 @@ export function getAverages(seasons) {
         // FIX averages before adding the below
         if (key === 'fg_pct' || key === 'fg3_pct' || key === 'ft_pct') {
             averages[key] = averages[key].toFixed(4)
-            console.log('%', averages[key])
             const percentStat = getPercent(averages[key])
             averages[key] = percentStat
-            console.log('revised stat', averages[key])
 
         } else if (key === 'games_played') {
             averages[key] = averages[key].toFixed(1)

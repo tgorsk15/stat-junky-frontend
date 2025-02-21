@@ -3,7 +3,7 @@ import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
 import { usePlayer } from "../../utils/usePlayer"
 
 
-export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
+export const PlayerResults = ({ handleResultClick, isPlayer2, searchLoading }) => {
     const { player1Exists, player1Results, player2Exists, player2Results,
         setPlayer1Exist, setPlayer2Exist, changeP1Results, changeP2Results
      } = usePlayer()
@@ -56,13 +56,17 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
             ) }
 
             {playerExists && emptyResults && (
-                <h2 className={nbaPage.noResultsHeader}>
-                    {/* put in loading animation here */}
-                    {/* ...actually that needs to be a separate conditonal or state,
-                    because I need to still have a NoResults message */}
-                    {/* OR I could try putting another conditional in here... */}
-                    No results
-                </h2>
+                // do another check here:
+                searchLoading ? (
+                    <div>
+                        We load
+                    </div>
+                ) : (
+                    <h2 className={nbaPage.noResultsHeader}>
+                        No results
+                    </h2>
+                )
+                
             )}
 
         </div>
@@ -72,5 +76,6 @@ export const PlayerResults = ({ handleResultClick, isPlayer2 }) => {
 
 PlayerResults.propTypes = {
     handleResultClick: PropTypes.func,
-    isPlayer2: PropTypes.bool
+    isPlayer2: PropTypes.bool,
+    searchLoading: PropTypes.func
 }

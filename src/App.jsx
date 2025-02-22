@@ -15,6 +15,7 @@ import { NflPage } from './Pages/NflPage/NflPage'
 function App() {
   // will always be true until Account page is created:
   const [currentUser, changeUser] = useState(true)
+  const [currentLeague, changeLeague] = useState('NBA')
 
   const queryClient = new QueryClient()
 
@@ -34,7 +35,9 @@ function App() {
         },
         {
           path: "home",
-          element: <Home />,
+          element: <Home 
+            currentLeague={currentLeague}
+          />,
           children: [
             {
               // path: "nba",

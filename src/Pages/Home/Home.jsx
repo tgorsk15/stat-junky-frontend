@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom"
 import { NavBar } from "../../Components/NavBar/NavBar"
 
-export const Home = () => {
+export const Home = ({currentLeague}) => {
 
     return (
         <div>
             <nav>
-                <NavBar />
+                <NavBar 
+                    currentLeague={currentLeague}
+                />
             </nav>
 
             <Outlet />

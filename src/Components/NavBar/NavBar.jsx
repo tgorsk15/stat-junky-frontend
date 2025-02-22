@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
 
-export const NavBar = ({currentLeague}) => {
+export const NavBar = ({currentLeague, changeLeague}) => {
+    const [isDropdownOpen, setDropdown] = useState(false)
+
+    function handleLeagueClick(e) {
+        if (!isDropdownOpen) {
+            setDropdown(true)
+        } else {
+            setDropdown(false)
+        }
+    }
 
     return (
         <nav className='navBar'>
@@ -10,20 +20,18 @@ export const NavBar = ({currentLeague}) => {
                 <h2>Stat Junky</h2>
                 <div className='linksContainer'>
                     <div className='leagueSelection'>
-                        <button>
+                        <button className='leagueBtn'onClick={handleLeagueClick}>
                             {currentLeague}  
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <FontAwesomeIcon icon={faAngleDown} className='downCaretIcon'/>
                         </button>
                         
-                        <div className='leagueDropdown'>
+                        <div 
+                            className={`leagueDropdown ${isDropdownOpen && ('dropdownVisible')}`}
+                        >
                             <p>NBA</p>
                             <p>NFL</p>
                             <p>NHL</p>
                         </div>
-                        {/* TMW 2/22: 
-                        get icon to work, look up a video on how to import a Font awesome 
-                        icon properly.  Start creating dropdown menu... menu should appear on
-                        CLICK of the caret... think about it before going to Claude */}
                         
                     </div>
                 </div>

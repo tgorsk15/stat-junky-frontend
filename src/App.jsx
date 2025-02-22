@@ -37,6 +37,7 @@ function App() {
           path: "home",
           element: <Home 
             currentLeague={currentLeague}
+            changeLeague={changeLeague}
           />,
           children: [
             {

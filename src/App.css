@@ -51,11 +51,26 @@ button:hover {
 }
 
 .leagueSelection {
+  position: relative;
   display: flex;
+  margin-right: 30px;
+}
+
+.leagueBtn {
+
+}
+
+.downCaretIcon {
   
 }
 
 
-.angleDown {
-  width: 20px;
+.leagueDropdown {
+  position: absolute;
+  color: red;
+  opacity: 0;
+}
+
+.dropdownVisible {
+  opacity: 1;
 }

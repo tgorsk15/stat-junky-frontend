@@ -83,5 +83,5 @@ export const PlayerResults = ({ handleResultClick, isPlayer2, searchLoading }) =
 PlayerResults.propTypes = {
     handleResultClick: PropTypes.func,
     isPlayer2: PropTypes.bool,
-    searchLoading: PropTypes.func
+    searchLoading: PropTypes.bool
 }

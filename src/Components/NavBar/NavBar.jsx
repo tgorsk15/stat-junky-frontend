@@ -16,7 +16,14 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                 setDropdown(false)
                 console.log(dropdownRef.current)
             } else {
-                setDropdown(true)
+                if (isDropdownOpen === true && downCaretRef.current.contains(e.target)) {
+                    console.log('hitting false')
+                    setDropdown(false)
+                } else {
+                    console.log('hitting true')
+                   setDropdown(true) 
+                }
+                
             }
             
         }
@@ -26,12 +33,7 @@ export const NavBar = ({currentLeague, changeLeague}) => {
         return () => {
             document.removeEventListener('click', handleOutsideClick)
         }
-    }, [])
-
-
-    function handleLeagueClick(e) {
-        setDropdown(true)
-    }
+    }, [isDropdownOpen])
 
     return (
         <nav className='navBar'>
@@ -39,7 +41,7 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                 <h2>Stat Junky</h2>
                 <div className='linksContainer'>
                     <div className='leagueSelection'>
-                        <button className='leagueBtn'onClick={handleLeagueClick} ref={downCaretRef}>
+                        <button className='leagueBtn' ref={downCaretRef}>
                             {currentLeague}  
                             <FontAwesomeIcon icon={faAngleDown} className='downCaretIcon'/>
                         </button>
@@ -53,7 +55,8 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                             <p>NFL</p>
                             <p>NHL</p>
                         </div>
-                        
+                        {/* LEFT OFF HERE:  start stylign drop down and 
+                        create animation for it */}
                     </div>
                 </div>
             </div>

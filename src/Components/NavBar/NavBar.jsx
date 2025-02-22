@@ -34,8 +34,16 @@ export const NavBar = ({currentLeague, changeLeague}) => {
     return (
         <nav className='navBar'>
             <div className='navBarContainer'>
-                <h2>Stat Junky</h2>
-                <div className='linksContainer'>
+                <div className='siteOverview'>
+                    <h2>Stat Junky</h2>
+                    <div className='infoLinksContainer'>
+                        <div>About</div>
+                        <div>Data</div>
+                        <div>Contact</div>
+                    </div>
+                </div>
+
+                <div className='leagueLinksContainer'>
                     <div className='leagueSelection'>
                         <button className='leagueBtn' ref={downCaretRef}>
                             {currentLeague}  
@@ -50,8 +58,10 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                             <Link to='/home/nba'>
                                 NBA
                             </Link>
-                            <p>NFL</p>
-                            <p>NHL</p>
+                            <Link to='/home/nfl'>
+                                NFL
+                            </Link>
+                            <p disabled='true'>NHL</p>
                         </div>
                     </div>
                 </div>

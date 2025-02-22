@@ -48,6 +48,10 @@ button {
   gap: 80px;
 }
 
+.siteOverview > h2 {
+  font-size: 32px;
+}
+
 .infoLinksContainer {
   display: flex;
   align-items: center;
@@ -65,7 +69,7 @@ button {
 }
 
 .leagueBtn {
-  margin-top: 25px;
+  margin-top: 35px;
   font-size: 17px;
   background: none;
   transition: all 200ms ease-in;
@@ -87,7 +91,7 @@ button {
   align-items: start;
   width: 80px;
   padding: 5px 0px;
-  top: 40px;
+  top: 50px;
   opacity: 0;
   transition: all ease-in 200ms;
 }

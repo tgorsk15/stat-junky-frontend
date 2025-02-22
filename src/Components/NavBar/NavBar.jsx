@@ -31,6 +31,11 @@ export const NavBar = ({currentLeague, changeLeague}) => {
         }
     }, [isDropdownOpen])
 
+    function handleLeagueChange(newLeague) {
+        changeLeague(newLeague)
+    }
+
+
     return (
         <nav className='navBar'>
             <div className='navBarContainer'>
@@ -58,10 +63,10 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                             <Link to='/home/nba'>
                                 NBA
                             </Link>
-                            <Link to='/home/nfl'>
+                            <Link to='/home/nfl' onClick={() => {handleLeagueChange('NFL')}}>
                                 NFL
                             </Link>
-                            <p disabled='true'>NHL</p>
+                            <p disabled={true}>NHL</p>
                         </div>
                     </div>
                 </div>

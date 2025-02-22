@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
@@ -14,18 +15,13 @@ export const NavBar = ({currentLeague, changeLeague}) => {
             if (!dropdownRef.current.contains(e.target) && 
             !downCaretRef.current.contains(e.target)) {
                 setDropdown(false)
-                console.log(dropdownRef.current)
             } else {
                 if (isDropdownOpen === true && downCaretRef.current.contains(e.target)) {
-                    console.log('hitting false')
                     setDropdown(false)
                 } else {
-                    console.log('hitting true')
                    setDropdown(true) 
                 }
-                
             }
-            
         }
 
         document.addEventListener('click', handleOutsideClick);
@@ -51,12 +47,12 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                             className={`leagueDropdown ${isDropdownOpen && ('dropdownVisible')}`}
                         >
                             {/* in the future, clicking the below will trigger changeLeague... */}
-                            <p>NBA</p>
+                            <Link to='/home/nba'>
+                                NBA
+                            </Link>
                             <p>NFL</p>
                             <p>NHL</p>
                         </div>
-                        {/* LEFT OFF HERE:  start stylign drop down and 
-                        create animation for it */}
                     </div>
                 </div>
             </div>

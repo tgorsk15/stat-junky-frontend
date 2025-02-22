@@ -41,8 +41,13 @@ function App() {
           />,
           children: [
             {
-              // path: "nba",
               index: true,
+              element: <Navigate to='nba'/>
+              
+            },
+            {
+              path: "nba",
+              // index: true,
               element: <NbaPlayerProvider> <NbaPage /> </NbaPlayerProvider>,
               
             },

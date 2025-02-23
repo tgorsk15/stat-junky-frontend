@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    /* padding: 0px 20px; */
     margin: 30px 15px;
 }
 
@@ -16,7 +15,10 @@
     gap: 200px;
     height: 110px;
     width: 90%;
-    background-color: #3B6790;
+    /* background: rgb(69,135,212);
+    background: linear-gradient(167deg, rgba(69,135,212,1) 7%, rgba(75,129,245,1) 32%, rgba(69,135,212,1) 100%); */
+    background: rgb(67,122,186);
+    background: linear-gradient(167deg, rgb(68, 130, 201) 7%, rgba(75,129,245,1) 32%, rgba(71, 132, 202) 100%);
     padding: 0px 30px;
     border-radius: 7px;
     box-shadow: 2px 2px 4px 0px rgb(0, 0, 0, 0.4);
@@ -278,6 +280,7 @@
     font-size: 22px;
     font-weight: bold;
     background: #a7e3d3;
+    background: aliceblue;
 }
 
 

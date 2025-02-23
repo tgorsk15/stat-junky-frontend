@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  /* background-color: #F6F4F0; */
 }
 
 
@@ -81,9 +82,11 @@ button {
 
 .leagueBtn:hover {
   background-color: azure;
+  color: black;
 }
 
-.downCaretIcon {
+.leagueBtn:hover .downCaretIcon {
+  color: black !important;
   
 }
 
@@ -112,5 +115,5 @@ button {
 .leagueDropdown > * {
   margin: 5px 0px;
   margin-left: 15px;
-  
+  color: black;
 }

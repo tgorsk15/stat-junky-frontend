@@ -58,6 +58,8 @@
     
 }
 
+
+/* playerResults section */
 .resultsBox {
     position: absolute;
     top: 20px;
@@ -95,9 +97,20 @@
 .playerResult {
     width: 100%;
     text-align: left;
-    border-bottom: 1px solid black;
     padding: 7px 0px;
+    box-shadow: 0px 4px 4px -5px;
+    border-radius: 5px;
 }
+
+.playerResult > button {
+    font-size: 17px;
+    transition: all ease-in 200ms;
+}
+
+.playerResult > button:hover {
+    color: white;
+}
+
 
 .playerLink {
     padding: 0px;

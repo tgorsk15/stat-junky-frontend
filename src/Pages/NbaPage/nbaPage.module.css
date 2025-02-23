@@ -18,6 +18,17 @@
     width: 90%;
     background-color: #3B6790;
     padding: 0px 30px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px 0px rgb(0, 0, 0, 0.4);
+}
+
+.fadeInContainer {
+    animation: fadeIn 0.5s ease-in;
+    opacity: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .searchContainer {
@@ -28,13 +39,8 @@
     gap: 20px;
 }
 
-.fadeInContainer {
-    animation: fadeIn 0.5s ease-in;
-    opacity: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.searchContainer, .searchContainer2 {
+    color: white;
 }
 
 @keyframes fadeIn {
@@ -285,9 +291,11 @@
 /* player comparison */
 .playerCompSection {
     margin: 40px 0px;
+    margin-top: 90px;
     padding: 20px 0px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
     background-color: #3B6790;
     box-shadow: 0px 2px 7px 0px rgb(0, 0, 0, 0.4);
 }

@@ -49,10 +49,10 @@ export const PlayerCard = ({isPlayer2}) => {
                         <div className={cardStyles.playerDetails}>
                             <h5>{player.team.full_name}</h5>
                             <h5 className={cardStyles.jersey}>Jersey: #{player.jersey_number}</h5>
-                            <h5>Position: {player.position}</h5>
+                            <h5 className={cardStyles.position}>Position: {player.position}</h5>
                             <h5 className={cardStyles.college}>College: {player.college}</h5>
                             <h5 className={cardStyles.height}>Height: {player.height}</h5>
-                            <h5>Weight: {player.weight}lb</h5>
+                            <h5 className={cardStyles.weight}>Weight: {player.weight}lb</h5>
                         </div>
                     </div>
                     
@@ -82,7 +82,7 @@ export const PlayerCard = ({isPlayer2}) => {
                             <tbody>
                                 {seasons.map((year) => {
                                     return (
-                                        <tr key={year.season} className={cardStyles.seasonRow}>
+                                        <tr key={year[0].season} className={cardStyles.seasonRow}>
                                             <td>{year[0].season}</td>
                                             <td>{year[0].games_played}</td>
                                             <td>{year[0].pts.toFixed(1)}</td>
@@ -104,6 +104,7 @@ export const PlayerCard = ({isPlayer2}) => {
                             </tbody>
                             
                         </table>
+                        {/* START STYLING CARDS */}
                         
                     </div>
                 </div> 

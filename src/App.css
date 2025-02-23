@@ -32,8 +32,12 @@ button {
 
 /* Nav Bar */
 .navBar {
-  background-color: bisque;
+  background-color: #3B6790;
   
+}
+
+.navBar * {
+  color: white;
 }
 
 .navBarContainer {

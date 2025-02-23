@@ -1,9 +1,17 @@
 .compareContainer {
-    /* background-color: lime; */
+    color: white;
 }
 
 .compareTable {
     border-collapse: collapse;
+    color: black;
+}
+
+.compareHeader {
+    background-color: #a7e3d3;
+    background-color: #B7CDE1;
+    /* background-color: #9AB9D6; */
+
 }
 
 .compareHeader, .compareBody > tr {
@@ -14,15 +22,28 @@
     padding: 9px 11px;
     border: none;
     border-radius: 0px;
-    background-color: rgb(236, 239, 244);
+    /* background-color: rgb(236, 239, 244); */
 }
 
-.compareBody td {
+.player1Row, .player2Row {
+    background-color: rgb(236, 239, 244);
+    background-color: aliceblue;
+    background-color: whitesmoke;
+}
 
+.comparisonRow {
+    background-color: #B7CDE1;
+    background-color: #C5D7E7;
+    background-color: aliceblue;
+    /* background-color: #9AB9D6; */
+}
+
+.comparisonRow td {
+    font-weight: bold;
 }
 
 .positive {
-    color: green;
+    color: #36AB8B;
 }
 
 .negative {

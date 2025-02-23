@@ -259,6 +259,7 @@
     position: absolute;
     top: 20px;
     visibility: hidden;
+    background: #a7e3d3;
 }
 
 .visibleBtn {
@@ -270,6 +271,7 @@
     padding: 12px 14px;
     font-size: 22px;
     font-weight: bold;
+    background: #a7e3d3;
 }
 
 
@@ -284,7 +286,10 @@
 .playerCompSection {
     margin: 40px 0px;
     padding: 20px 0px;
-    background-color: rosybrown;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #3B6790;
+    box-shadow: 0px 2px 7px 0px rgb(0, 0, 0, 0.4);
 }
 
 

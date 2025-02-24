@@ -69,7 +69,7 @@ export const PlayerResults = ({ handleResultClick, isPlayer2, searchLoading }) =
                     </div>
                 ) : (
                     <h2 className={nbaPage.noResultsHeader}>
-                        No results
+                        No Results
                     </h2>
                 )
                 

@@ -17,11 +17,10 @@ export const NbaPage = () => {
     const compareRef = useRef(null)
 
     // CHECKLIST:
-    // center loading spinner on playerSearch
-    // fix click logic of compare button
     // fix caretDown color on hover
     // style search bars
     // further style border lines in comparison table
+    // find place to get player pictures? web scrape?
 
 
     // ** Maybe pre-load all player data instead:
@@ -34,13 +33,6 @@ export const NbaPage = () => {
         
     })
 
-    // const executeScroll = () => compareRef.current.scrollIntoView({ behavior: 'smooth'})
-
-    // **MAYBE put the below scroll action back into onClick function... so user can keep clicking
-    // the button and have it scroll down
-
-    // TMW 2/24:
-    // work on figuring out how to make this retrigger everytime the button is clicked...
     useEffect(() => {
         if (compareClicked && compareRef.current) {
             window.scroll({

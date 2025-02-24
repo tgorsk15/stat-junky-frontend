@@ -23,6 +23,7 @@ export async function playersQuery(query) {
 }
 
 export async function getPlayerStats(player) {
+    console.log('player being searched for:', player)
     const postOptions = {
         method: "POST",
         headers: {"Content-Type": "application/json"},

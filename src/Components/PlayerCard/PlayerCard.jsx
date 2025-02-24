@@ -1,5 +1,4 @@
 import PropTypes from "prop-types"
-import { useContext } from "react"
 import { usePlayer } from "../../utils/usePlayer"
 import { getPercent } from "../../utils/getPercent"
 
@@ -41,7 +40,9 @@ export const PlayerCard = ({isPlayer2}) => {
     return (
         <>
             {currentPlayerStats && (
-                <div className={cardStyles.cardContainer}>
+                <div className=
+                {`${cardStyles.cardContainer} ${player1Stats && !player2Stats ? cardStyles.onlyCard : ''}`}>
+                    
                     <div className={cardStyles.cardHeader}>
                         <h2 className={cardStyles.playerTitle}>
                             {player.first_name} {player.last_name}

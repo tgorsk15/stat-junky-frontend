@@ -18,9 +18,8 @@ export const NbaPage = () => {
 
     // CHECKLIST:
     // fix caretDown color on hover
-    // style search bars
     // make a footer
-    // expand playerCard if only player1 exists
+    // handle edge case of empty search
     // add responsiviness
     // find place to get player pictures? web scrape?
 

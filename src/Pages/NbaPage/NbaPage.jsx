@@ -16,6 +16,12 @@ export const NbaPage = () => {
 
     const compareRef = useRef(null)
 
+    // CHECKLIST:
+    // center loading spinner on playerSearch
+    // fix click logic of compare button
+    // fix caretDown color on hover
+    // style search bars
+
 
     // ** Maybe pre-load all player data instead:
     const {data: teamsData, isPending, error, refetch} = useQuery({

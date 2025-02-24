@@ -267,7 +267,6 @@
     position: absolute;
     top: 20px;
     visibility: hidden;
-    background: #a7e3d3;
 }
 
 .visibleBtn {
@@ -279,8 +278,16 @@
     padding: 12px 14px;
     font-size: 22px;
     font-weight: bold;
-    background: #a7e3d3;
-    background: aliceblue;
+    background: #8ba7c1;
+    color: white;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.4);
+    /* ADD SOME KIND OF HOVER ANIMATION, OR CLICK */
+    transition: all ease-in 200ms;
+}
+
+.visibleBtn:hover {
+    border: 2px solid #739d92;
+    background: #a4c5e4;
 }
 
 

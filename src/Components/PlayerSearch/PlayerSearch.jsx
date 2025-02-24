@@ -13,7 +13,7 @@ import { getPlayerStats } from "../../utils/dataFetches"
 export const PlayerSearch = ({isPlayer2}) => {
     const { setPlayer1Stats, setPlayer1Load, setPlayer2Stats, setPlayer2Load,
         setPlayer1Exist, changeP1Results,  
-        setPlayer2Exist, changeP2Results} = usePlayer()
+        setPlayer2Exist, changeP2Results, setClicked} = usePlayer()
 
     const [query, changeQuery] = useState("")
     // could set up loading state here for PlayerResults if I want
@@ -27,10 +27,13 @@ export const PlayerSearch = ({isPlayer2}) => {
         const newQuery = formData.get('searchBox')
         changeQuery(newQuery)
 
+        
         if (isPlayer2) {
             setPlayer2Exist(true)
+            changeP2Results('')
         } else {
             setPlayer1Exist(true)
+            changeP1Results('')
         }
 
         setSearchLoading(true)
@@ -63,7 +66,10 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Load(false)
             console.log('player seasons', seasonStats)
             setPlayer1Stats(seasonStats)  
+
         }
+        // make comparison table dissapear:
+        setClicked(false)
         
     }
 

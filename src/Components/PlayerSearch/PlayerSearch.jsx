@@ -48,6 +48,8 @@ export const PlayerSearch = ({isPlayer2}) => {
 
 
     async function handleResultClick(player) {
+        // make comparison table dissapear:
+        setClicked(false)
 
         if (isPlayer2) {
             setPlayer2Exist(false)
@@ -66,8 +68,6 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Stats(seasonStats)  
 
         }
-        // make comparison table dissapear:
-        setClicked(false)
         
     }
 

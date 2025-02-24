@@ -83,6 +83,7 @@
 
 .playerDetails > .college {
     justify-self: start;
+    text-align: left;
 }
 
 .dataTable {
@@ -118,6 +119,13 @@ th, td {
 td {
     font-size: 13px;
     font-weight: 600;
+}
+
+.cardLoadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 60px;
 }
 
 /* loading animation */

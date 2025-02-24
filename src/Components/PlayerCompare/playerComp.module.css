@@ -18,7 +18,8 @@
 }
 
 .compareHeader, .compareBody > tr {
-    border-bottom: 1px solid black
+    border-bottom: 1px solid #3B6790;
+    border-bottom: 1px solid #9c9e9f
 }
 
 .compareHeader th, .compareBody td {

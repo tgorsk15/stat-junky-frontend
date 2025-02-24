@@ -21,6 +21,7 @@ export const NbaPage = () => {
     // fix click logic of compare button
     // fix caretDown color on hover
     // style search bars
+    // further style border lines in comparison table
 
 
     // ** Maybe pre-load all player data instead:
@@ -37,6 +38,9 @@ export const NbaPage = () => {
 
     // **MAYBE put the below scroll action back into onClick function... so user can keep clicking
     // the button and have it scroll down
+
+    // TMW 2/24:
+    // work on figuring out how to make this retrigger everytime the button is clicked...
     useEffect(() => {
         if (compareClicked && compareRef.current) {
             window.scroll({
@@ -50,7 +54,16 @@ export const NbaPage = () => {
 
     function handleCompareClick() {
         console.log('comparing')
-        setClicked(true)
+        if (!compareClicked) {
+            setClicked(true)
+        } else {
+            window.scroll({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+        
     }
 
 

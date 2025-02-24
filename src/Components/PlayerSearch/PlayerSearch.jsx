@@ -16,7 +16,6 @@ export const PlayerSearch = ({isPlayer2}) => {
         setPlayer2Exist, changeP2Results, setClicked} = usePlayer()
 
     const [query, changeQuery] = useState("")
-    // could set up loading state here for PlayerResults if I want
     const [searchLoading, setSearchLoading] = useState(false)
 
 
@@ -27,7 +26,6 @@ export const PlayerSearch = ({isPlayer2}) => {
         const newQuery = formData.get('searchBox')
         changeQuery(newQuery)
 
-        
         if (isPlayer2) {
             setPlayer2Exist(true)
             changeP2Results('')

@@ -79,7 +79,12 @@ export const NbaPage = () => {
             <div className={nbaStyles.createBtnContainer}>
                 <button 
                     className={
-                        `${player1Stats && player2Stats ? nbaStyles.visibleBtn : nbaStyles.createCompBtn}` }
+                        `${player1Stats && player2Stats ? nbaStyles.visibleBtn : nbaStyles.createCompBtn}` 
+                    }
+                    disabled={
+                        player1Stats && player2Stats && 
+                        (player1Stats.seasons.length === 0 || player2Stats.seasons.length === 0) ? true : false
+                    }
                     onClick={() => {
                         handleCompareClick()
                     }}

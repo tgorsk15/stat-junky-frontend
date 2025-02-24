@@ -26,8 +26,6 @@
     animation: fadeIn 0.5s ease-in;
     opacity: 1;
     display: flex;
-    /* flex-direction: column;
-    justify-content: center; */
 }
 
 .searchContainer {
@@ -85,7 +83,6 @@
     outline: none;
     color: white;
     font-size: 18px;
-    /* box-shadow: inset 0 0 10px -7px rgb(0, 0, 0, 0.4); */
     margin-left: 10px;
 }
 
@@ -108,6 +105,15 @@
 
 .searchIcon {
     color: white;
+    transition: all 200ms ease-in, color 100ms ease-in;
+}
+
+.searchIcon:hover {
+    transform: scale(1.1) translateY(-2px);
+}
+
+.searchIcon:active {
+    color: #3B6790;
 }
 
 /* playerResults section */

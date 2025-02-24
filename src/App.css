@@ -37,9 +37,9 @@ button {
   
 }
 
-.navBar * {
+/* .navBar * {
   color: white;
-}
+} */
 
 .navBarContainer {
   display: flex;
@@ -51,6 +51,7 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 80px;
+  color: white;
 }
 
 .siteOverview > h2 {
@@ -73,6 +74,10 @@ button {
   margin-right: 30px;
 }
 
+.leagueSelection > * {
+  color: white;
+}
+
 .leagueBtn {
   margin-top: 35px;
   font-size: 17px;
@@ -81,13 +86,18 @@ button {
 }
 
 .leagueBtn:hover {
-  background-color: azure;
-  color: black;
+  background-color: #8cbfb2;
+  box-shadow: 0 0 2px 0px rgb(0, 0, 0, 0.6);
+  /* color: black; */
 }
 
-.leagueBtn:hover .downCaretIcon {
-  color: black !important;
+.leagueBtn:hover > * {
+  /* color: black; */
   
+}
+
+.downCaretIcon {
+  transition: all 200ms ease-in;
 }
 
 

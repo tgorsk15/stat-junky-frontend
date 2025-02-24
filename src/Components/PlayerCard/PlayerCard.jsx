@@ -37,6 +37,7 @@ export const PlayerCard = ({isPlayer2}) => {
     const player = currentPlayerStats.playerData
     const seasons = currentPlayerStats.seasons
 
+
     return (
         <>
             {currentPlayerStats && (
@@ -55,7 +56,7 @@ export const PlayerCard = ({isPlayer2}) => {
                         </div>
                     </div>
                     
-
+                    {seasons.length > 0 ? (
                     <div className={cardStyles.cardBody}>
                         <table className={cardStyles.dataTable}>
                             <thead>
@@ -104,6 +105,13 @@ export const PlayerCard = ({isPlayer2}) => {
                             
                         </table>
                     </div>
+                    ) : (
+                        <div className={cardStyles.noSeasonsContainer}>
+                          <h3>No Seasonal Data found</h3>  
+                        </div>
+                        
+                    )}
+                    
                 </div> 
             )}
             

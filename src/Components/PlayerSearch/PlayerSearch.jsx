@@ -66,9 +66,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Load(false)
             console.log('player seasons', seasonStats)
             setPlayer1Stats(seasonStats)  
-
         }
-        
     }
 
 

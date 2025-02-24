@@ -12,11 +12,9 @@
     vertical-align: middle;
     display: flex;
     justify-content: start;
-    gap: 200px;
+    gap: 180px;
     height: 110px;
     width: 90%;
-    /* background: rgb(69,135,212);
-    background: linear-gradient(167deg, rgba(69,135,212,1) 7%, rgba(75,129,245,1) 32%, rgba(69,135,212,1) 100%); */
     background: rgb(67,122,186);
     background: linear-gradient(167deg, rgb(68, 130, 201) 7%, rgba(75,129,245,1) 32%, rgba(71, 132, 202) 100%);
     padding: 0px 30px;
@@ -27,10 +25,9 @@
 .fadeInContainer {
     animation: fadeIn 0.5s ease-in;
     opacity: 1;
-
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column;
+    justify-content: center; */
 }
 
 .searchContainer {
@@ -63,26 +60,70 @@
 }
 
 .playerSearchForm {
-    
+    border-bottom: 3px solid white;
+    padding-bottom: 3px;
 }
 
+.searchBox {
+    width: 210px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 3px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.searchBox::-webkit-input-placeholder {
+    color: white;
+    font-size: 18px;
+}
+
+.searchBox:focus,
+.searchBox:active {
+    outline: none;
+    color: white;
+    font-size: 18px;
+    /* box-shadow: inset 0 0 10px -7px rgb(0, 0, 0, 0.4); */
+    margin-left: 10px;
+}
+
+.searchBox:-webkit-autofill,
+.searchBox:-webkit-autofill:hover, 
+.searchBox:-webkit-autofill:focus,
+.searchBox:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white !important;
+    box-shadow: inset 0 0 0px 1000px transparent;
+    transition: all 5000s ease-in-out 0s;
+    font-size: 18px !important; 
+    margin-left: 10px;
+    caret-color: white;
+}
+
+.searchSubmit {
+    background: none;
+}
+
+.searchIcon {
+    color: white;
+}
 
 /* playerResults section */
 .resultsBox {
     position: absolute;
-    top: 20px;
-
     visibility: hidden;
-    background-color: cadetblue;
     overflow: scroll;
     height: 300px;
 }
 
 .activeList {
     position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    top: 85px;
+    right: 20px;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
     display: flex;
     flex-direction: column;
     align-items: start;

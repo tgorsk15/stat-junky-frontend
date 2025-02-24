@@ -19,10 +19,10 @@ export const NbaPage = () => {
     // CHECKLIST:
     // fix caretDown color on hover
     // style search bars
-    // further style border lines in comparison table
+    // make a footer
+    // expand playerCard if only player1 exists
+    // add responsiviness
     // find place to get player pictures? web scrape?
-    // set up check if player has NO stats... if true, need to display "no
-            // stats available under playerDetails"
 
 
     // ** Maybe pre-load all player data instead:

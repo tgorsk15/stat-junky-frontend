@@ -23,7 +23,6 @@ export const PlayerResults = ({ handleResultClick, isPlayer2, searchLoading }) =
                 <button 
                     className={nbaPage.exitSearchBtn}
                     onClick={() => {
-                        console.log('clicking back')
                         if (isPlayer2) {
                             changeP2Results('')
                             setPlayer2Exist(false)

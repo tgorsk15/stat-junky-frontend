@@ -1,13 +1,13 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { playersQuery } from "../../utils/dataFetches"
-
 import nbaPage from "../../Pages/NbaPage/nbaPage.module.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons" 
+
 import { useState } from "react"
 import PropTypes from "prop-types"
 import { usePlayer } from "../../utils/usePlayer"
 
 import { PlayerResults } from "../PlayerResults/PlayerResults"
-import { getPlayerStats } from "../../utils/dataFetches"
+import { getPlayerStats, playersQuery } from "../../utils/dataFetches"
 
 
 export const PlayerSearch = ({isPlayer2}) => {
@@ -74,7 +74,7 @@ export const PlayerSearch = ({isPlayer2}) => {
         <div 
             className={`${isPlayer2 ? nbaPage.searchContainer2 : nbaPage.searchContainer}`}
         >
-            <h3>{isPlayer2 ? 'Add Player 2:' : 'Add Player 1:'}</h3>
+            <h3>{isPlayer2 ? 'Add a Second Player:' : 'Add a Player:'}</h3>
             <form
                 onSubmit={handleSearch}
                 className={`${nbaPage.playerSearchForm}`}
@@ -83,11 +83,12 @@ export const PlayerSearch = ({isPlayer2}) => {
                     type="text"
                     name="searchBox"
                     className={`${nbaPage.searchBox}`}
+                    placeholder="Type player name..."
                 />
                 <button
                     className={`${nbaPage.searchSubmit}`}
                 >
-                    Search
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className={nbaPage.searchIcon}/>
                 </button>
             </form>
 

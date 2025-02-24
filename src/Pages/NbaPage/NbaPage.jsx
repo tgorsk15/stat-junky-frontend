@@ -19,7 +19,6 @@ export const NbaPage = () => {
     // CHECKLIST:
     // fix caretDown color on hover
     // make a footer
-    // handle edge case of empty search
     // add responsiviness
     // find place to get player pictures? web scrape?
 

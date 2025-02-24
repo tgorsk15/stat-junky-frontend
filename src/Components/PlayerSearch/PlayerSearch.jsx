@@ -24,6 +24,9 @@ export const PlayerSearch = ({isPlayer2}) => {
         
         const formData = new FormData(e.target)
         const newQuery = formData.get('searchBox')
+        if (newQuery === '') {
+            return
+        }
         changeQuery(newQuery)
 
         if (isPlayer2) {

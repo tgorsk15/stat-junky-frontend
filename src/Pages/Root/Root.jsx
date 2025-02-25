@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
+import '../../App.css'
 
 
 export const Root = () => {
 
     return (
-        <main>
+        <main className='MAINcontainer'>
             <Outlet context={{
 
             }}/>

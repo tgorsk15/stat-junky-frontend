@@ -17,7 +17,6 @@ export const NbaPage = () => {
     const compareRef = useRef(null)
 
     // CHECKLIST:
-    // fix caretDown color on hover
     // make a footer
     // add responsiviness
     // find place to get player pictures? web scrape?

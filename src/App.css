@@ -1,6 +1,14 @@
 body {
   margin: 0px;
-  /* background-color: #F6F4F0; */
+  min-height: 100vh;
+}
+
+.MAINcontainer {
+  min-height: 100vh;
+}
+
+.MAINcontainer > div {
+  min-height: 100vh;
 }
 
 
@@ -10,6 +18,7 @@ body {
   text-align: center;
   -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale; 
+  min-height: 100vh;
 }
 
 
@@ -34,12 +43,8 @@ button {
 /* Nav Bar */
 .navBar {
   background-color: #3B6790;
-  
+  height: 92px;
 }
-
-/* .navBar * {
-  color: white;
-} */
 
 .navBarContainer {
   display: flex;
@@ -126,4 +131,20 @@ button {
   margin: 5px 0px;
   margin-left: 15px;
   color: black;
+}
+
+
+/* footer section */
+.footerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: grey;
+  height: 90px;
+  width: 100%;
+}
+
+
+
+.emailContact {
+  font-size: 16px;
 }

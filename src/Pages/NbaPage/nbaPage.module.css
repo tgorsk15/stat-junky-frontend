@@ -4,6 +4,8 @@
     justify-content: center; 
     align-items: center;
     margin: 30px 15px;
+    /* screen height - navBar - footer - top/bottom margin */
+    min-height: calc(100vh - 92px - 90px - 60px);
 }
 
 
@@ -351,6 +353,7 @@
 /* player comparison */
 .playerCompSection {
     margin: 40px 0px;
+    margin-bottom: 10px;
     margin-top: 90px;
     padding: 20px 0px;
     border-radius: 5px;

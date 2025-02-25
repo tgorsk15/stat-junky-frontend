@@ -5,7 +5,7 @@
     align-items: center;
     margin: 30px 15px;
     /* screen height - navBar - footer - top/bottom margin : */
-    min-height: calc(100vh - 92px - 90px - 60px);
+    min-height: calc(100vh - 92px - 110px - 60px);
 }
 
 

@@ -1,6 +1,7 @@
 import '../../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright } from '@fortawesome/free-regular-svg-icons'
+import {faGithub} from '@fortawesome/free-brands-svg-icons'
 
 export const Footer = () => {
 
@@ -18,6 +19,10 @@ export const Footer = () => {
                 <h4 className='emailContact'>
                     tgbusiness463@gmail.com
                 </h4>
+                <a className="githubContact"  href="https://github.com/tgorsk15">
+                    <FontAwesomeIcon icon={faGithub} className='githubIcon'/>
+                    tgorsk15
+                </a>
                 
             </div>
 

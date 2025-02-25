@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -144,7 +143,7 @@ button {
   width: calc(100% - 70px);
   padding: 0px 30px;
   padding-right: 40px;
-  box-shadow: 0px -8px 20px 0px rgb(0, 0, 0, 0.2cx3ewds);
+  box-shadow: 0px -8px 20px 0px rgb(0, 0, 0, 0.2);
 }
 
 .footerContainer > * {

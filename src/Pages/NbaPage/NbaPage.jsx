@@ -17,10 +17,9 @@ export const NbaPage = () => {
     const compareRef = useRef(null)
 
     // CHECKLIST:
-    // make a footer
+    // add basic design to NFL
     // add responsiviness
     // find place to get player pictures? web scrape?
-    // TMW 2/25: get searchSection to fit back up at the top
 
 
     // ** Maybe pre-load all player data instead:
@@ -60,7 +59,7 @@ export const NbaPage = () => {
 
 
     return (
-        <div className={nbaStyles.mainNbaContainer}>
+        <main className={nbaStyles.mainNbaContainer}>
             <section className={`${nbaStyles.playerSearchSection}`}>
                 <PlayerSearch 
 
@@ -117,7 +116,7 @@ export const NbaPage = () => {
             </section>
             
 
-        </div>
+        </main>
     )
    
 }

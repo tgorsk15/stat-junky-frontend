@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from "prop-types"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
@@ -16,7 +18,8 @@ export const NavBar = ({currentLeague, changeLeague}) => {
             !downCaretRef.current.contains(e.target)) {
                 setDropdown(false)
             } else {
-                if (isDropdownOpen === true && downCaretRef.current.contains(e.target)) {
+                if (isDropdownOpen === true && downCaretRef.current.contains(e.target) ||
+                    isDropdownOpen === true && dropdownRef.current.contains(e.target)) {
                     setDropdown(false)
                 } else {
                    setDropdown(true) 
@@ -60,7 +63,7 @@ export const NavBar = ({currentLeague, changeLeague}) => {
                             className={`leagueDropdown ${isDropdownOpen && ('dropdownVisible')}`}
                         >
                             {/* in the future, clicking the below will trigger changeLeague... */}
-                            <Link to='/home/nba'>
+                            <Link to='/home/nba' onClick={() => {handleLeagueChange('NBA')}}>
                                 NBA
                             </Link>
                             <Link to='/home/nfl' onClick={() => {handleLeagueChange('NFL')}}>
@@ -73,4 +76,9 @@ export const NavBar = ({currentLeague, changeLeague}) => {
             </div>
         </nav>
     )
+}
+
+NavBar.propTypes = {
+    currentLeague: PropTypes.string,
+    changeLeague: PropTypes.func
 }

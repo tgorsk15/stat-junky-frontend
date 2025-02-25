@@ -137,14 +137,28 @@ button {
 /* footer section */
 .footerContainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: grey;
   height: 90px;
-  width: 100%;
+  /* full screen width - padding : */
+  width: calc(100% - 70px);
+  padding: 0px 30px;
+  padding-right: 40px;
 }
 
+.copyrightContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.contactHeader {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: start;
+}
 
 .emailContact {
   font-size: 16px;
+  margin-top: 10px;
 }

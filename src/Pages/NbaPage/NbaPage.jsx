@@ -20,6 +20,7 @@ export const NbaPage = () => {
     // make a footer
     // add responsiviness
     // find place to get player pictures? web scrape?
+    // TMW 2/25: get searchSection to fit back up at the top
 
 
     // ** Maybe pre-load all player data instead:

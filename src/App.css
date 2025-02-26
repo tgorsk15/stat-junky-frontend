@@ -21,16 +21,15 @@ body {
   min-height: 100vh;
 }
 
+@font-face {
+  font-family: titleFont;
+  src: url(./assets//RankedSports-4BMrB.ttf);
+}
+
+
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
-
-a:hover {
-  color: #535bf2;
-}
-
 
 button {
   border-radius: 8px;
@@ -58,8 +57,20 @@ button {
   color: white;
 }
 
-.siteOverview > h2 {
-  font-size: 32px;
+.siteTitleBox {
+  display: flex;
+  align-items: center;
+}
+
+.siteTitleBox > h2 {
+  font-size: 35px;
+  font-family: titleFont;
+  font-weight: 100;
+}
+
+.piranhaIcon {
+  height: 40px;
+  margin-left: 10px;
 }
 
 .infoLinksContainer {
@@ -68,9 +79,10 @@ button {
   gap: 30px;
 }
 
-.leagueLinksContainer {
-
+.infoLinksContainer > * {
+  font-weight: bold;
 }
+
 
 .leagueSelection {
   position: relative;

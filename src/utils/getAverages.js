@@ -23,13 +23,11 @@ export function getAverages(seasons) {
             
             }
         }
-        // console.log('averages after sums:', averages)
     }
 
     for (const [key, value] of Object.entries(averages)) {
         averages[key] = (averages[key] / seasons.length)
 
-        // FIX averages before adding the below
         if (key === 'fg_pct' || key === 'fg3_pct' || key === 'ft_pct') {
             averages[key] = averages[key].toFixed(4)
             const percentStat = getPercent(averages[key])
@@ -42,7 +40,6 @@ export function getAverages(seasons) {
         }
 
     }
-    console.log('newAverages:', averages)
     return averages
 
 }

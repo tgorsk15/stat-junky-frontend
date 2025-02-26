@@ -19,7 +19,6 @@ export const PlayerCompare = () => {
 
 
     useEffect(() => {
-        console.log('use effect running')
         if (!player1Stats || !player2Stats) {
             return
         }
@@ -29,7 +28,7 @@ export const PlayerCompare = () => {
         setPlayer2Avgs(averages2)
     }, [player1Stats, player2Stats])
 
-    console.log('final average data:', player1Averages, player2Averages)
+    // console.log('final average data:', player1Averages, player2Averages)
 
     if (player1Averages && player2Averages) {
         fgPercent1 = parseFloat(player1Averages.fg_pct)

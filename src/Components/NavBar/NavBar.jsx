@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import PiranhaIcon from './../../food-chain.png'
 import '../../App.css'
 
 export const NavBar = ({currentLeague, changeLeague}) => {
@@ -38,12 +39,16 @@ export const NavBar = ({currentLeague, changeLeague}) => {
         changeLeague(newLeague)
     }
 
+{/* <PiranhaIcon className='piranhaIcon'/> */}
 
     return (
         <nav className='navBar'>
             <div className='navBarContainer'>
                 <div className='siteOverview'>
-                    <h2>Stat Junky</h2>
+                    <div className='siteTitleBox'>
+                        <h2>Stat Junky</h2>
+                        <img src={PiranhaIcon} alt="Fish eating a fish" className='piranhaIcon'/>
+                    </div>
                     <div className='infoLinksContainer'>
                         <div>About</div>
                         <div>Data</div>

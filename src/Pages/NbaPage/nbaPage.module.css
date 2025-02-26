@@ -60,6 +60,8 @@
 }
 
 .playerSearchForm {
+    display: flex;
+
     border-bottom: 3px solid white;
     padding-bottom: 3px;
 }
@@ -368,3 +370,47 @@
 .fillerContainer {
     padding-bottom: 100px;
 }
+
+
+/* responsiveness: */
+@media (max-width: 1005px) {
+    .playerSearchSection {
+        gap: 60px;
+    }
+
+    /* playerSearch section */
+    .playerSearchForm {
+
+    }
+}
+
+@media (max-width: 860px) {
+    .playerSearchSection {
+        flex-direction: column;
+        height: fit-content;
+        align-items: center;
+        gap: 20px;
+    }
+
+}
+
+@media (max-width: 860px) {
+    .playerSearchSection {
+        padding: 0px;
+        padding-bottom: 30px;
+    }
+
+    .searchContainer, .searchContainer2 {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .searchTitle {
+        margin-bottom: 10px;
+    }
+
+    .searchBox {
+        width: 170px;
+    }
+}
+

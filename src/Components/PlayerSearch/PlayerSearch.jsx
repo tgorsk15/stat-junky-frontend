@@ -59,7 +59,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer2Load(true)
             const seasonStats = await getPlayerStats(player)
             setPlayer2Load(false)
-            console.log('player 2 seasons', seasonStats)
+            // console.log('player 2 seasons', seasonStats)
             setPlayer2Stats(seasonStats)
 
         } else {
@@ -67,7 +67,7 @@ export const PlayerSearch = ({isPlayer2}) => {
             setPlayer1Load(true)
             const seasonStats = await getPlayerStats(player)
             setPlayer1Load(false)
-            console.log('player seasons', seasonStats)
+            // console.log('player seasons', seasonStats)
             setPlayer1Stats(seasonStats)  
         }
     }
@@ -77,7 +77,7 @@ export const PlayerSearch = ({isPlayer2}) => {
         <div 
             className={`${isPlayer2 ? nbaPage.searchContainer2 : nbaPage.searchContainer}`}
         >
-            <h3>{isPlayer2 ? 'Add a Second Player:' : 'Add a Player:'}</h3>
+            <h3 className={nbaPage.searchTitle}>{isPlayer2 ? 'Add a Second Player:' : 'Add a Player:'}</h3>
             <form
                 onSubmit={handleSearch}
                 className={`${nbaPage.playerSearchForm}`}

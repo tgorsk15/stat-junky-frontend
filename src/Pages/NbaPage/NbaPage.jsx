@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from "react"
-import { useQuery, useQueryClient } from "@tanstack/react-query"
+import { useRef, useEffect } from "react"
+// import { useQuery, useQueryClient } from "@tanstack/react-query"
 
-import { getEnvVariable } from "../../utils/apiSetter"
-import { getTeams } from "../../utils/dataFetches"
+// import { getTeams } from "../../utils/dataFetches"
 import nbaStyles from "./nbaPage.module.css"
 import { usePlayer } from "../../utils/usePlayer"
 
@@ -17,20 +16,20 @@ export const NbaPage = () => {
     const compareRef = useRef(null)
 
     // CHECKLIST:
-    // add basic design to NFL
-    // add responsiviness
+    // add responsiviness - LEFT OFF HERE
     // find place to get player pictures? web scrape?
 
 
+
     // ** Maybe pre-load all player data instead:
-    const {data: teamsData, isPending, error, refetch} = useQuery({
-        queryFn: getTeams,
-        queryKey: ['allTeams'],
-        enabled: false,
-        initialData: null,
-        initialDataUpdatedAt: Date.now(),
+    // const {data: teamsData, isPending, error, refetch} = useQuery({
+    //     queryFn: getTeams,
+    //     queryKey: ['allTeams'],
+    //     enabled: false,
+    //     initialData: null,
+    //     initialDataUpdatedAt: Date.now(),
         
-    })
+    // })
 
     useEffect(() => {
         if (compareClicked && compareRef.current) {
@@ -44,7 +43,6 @@ export const NbaPage = () => {
     }, [compareClicked])
 
     function handleCompareClick() {
-        console.log('comparing')
         if (!compareClicked) {
             setClicked(true)
         } else {
@@ -86,7 +84,6 @@ export const NbaPage = () => {
                         handleCompareClick()
                     }}
                 >
-                    {/* put player icon here */}
                     {compareClicked ? 'Go to Comparison' : 'Compare Players'}
                 </button>
             </div>

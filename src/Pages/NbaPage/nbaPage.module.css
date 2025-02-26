@@ -382,6 +382,11 @@
     .playerSearchForm {
 
     }
+
+    /* playerCards section */
+    .playerCardSection {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 860px) {
@@ -394,7 +399,7 @@
 
 }
 
-@media (max-width: 860px) {
+@media (max-width: 450px) {
     .playerSearchSection {
         padding: 0px;
         padding-bottom: 30px;

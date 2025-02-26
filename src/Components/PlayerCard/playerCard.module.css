@@ -248,3 +248,23 @@ td {
     }
 }
 /* end of loading section */
+
+
+
+/* responsiveness: */
+@media (max-width: 1005px) {
+    .cardContainer, .onlyCard {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 860px) {
+
+
+}
+
+@media (max-width: 450px) {
+    /* TMW 2/25:
+    In here, shrink text size and padding of the table cells, so that more can fit
+    in less space when the screen is this small */
+}

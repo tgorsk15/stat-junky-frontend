@@ -39,8 +39,6 @@ export const NavBar = ({currentLeague, changeLeague}) => {
         changeLeague(newLeague)
     }
 
-{/* <PiranhaIcon className='piranhaIcon'/> */}
-
     return (
         <nav className='navBar'>
             <div className='navBarContainer'>

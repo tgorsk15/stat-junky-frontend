@@ -427,5 +427,9 @@
         font-size: 18px;
         width: 200px;
     }
+
+    /* TMW 2/27:
+    add responsiveness to playerDetails.. change graph to 2 columns
+    add responsiveness to playerSearch components */
 }
 

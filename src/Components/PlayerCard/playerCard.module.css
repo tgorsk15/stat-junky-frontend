@@ -264,7 +264,12 @@ td {
 }
 
 @media (max-width: 450px) {
-    /* TMW 2/25:
-    In here, shrink text size and padding of the table cells, so that more can fit
-    in less space when the screen is this small */
+    th, td {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    td {
+        
+    }
 }

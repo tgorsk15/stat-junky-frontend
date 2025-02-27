@@ -417,5 +417,15 @@
     .searchBox {
         width: 170px;
     }
+
+    .createBtnContainer {
+        height: 70px;
+    }
+
+    .visibleBtn {
+        padding: 9px 11px;
+        font-size: 18px;
+        width: 200px;
+    }
 }
 

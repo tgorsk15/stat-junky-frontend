@@ -387,6 +387,10 @@
     .playerCardSection {
         flex-direction: column;
     }
+
+    .playerCompSection {
+        width: 85%;
+    }
 }
 
 @media (max-width: 860px) {
@@ -437,6 +441,13 @@
         width: 200px;
     }
 
+    .playerCompSection {
+        width: 90%;
+    }
+
+    .fillerContainer {
+        padding-bottom: 20px;
+    }
 }
 
 

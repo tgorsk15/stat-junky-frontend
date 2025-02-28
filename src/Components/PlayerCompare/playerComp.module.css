@@ -46,3 +46,34 @@
 .negative {
     color: red;
 }
+
+/* responsiveness */
+@media (max-width: 1005px) {
+    .compareContainer {
+        overflow-x: scroll;
+    }
+
+    .compareContainer::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .compareContainer::-webkit-scrollbar-track {
+        border-radius: 7px;
+        width: 6px;
+        background-color: white;
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, .3);
+    }
+    
+    .compareContainer::-webkit-scrollbar-thumb {
+        border-radius: 7px;
+        background-color: #a7e3d3;
+        border: 4px solid transparent;
+        background-clip: padding-box;
+    }
+}
+
+@media (max-width: 450px) {
+    .compareHeader th, .compareBody td {
+        padding: 5px 6px;
+    }
+}

@@ -104,12 +104,6 @@ button {
 .leagueBtn:hover {
   background-color: #8cbfb2;
   box-shadow: 0 0 2px 0px rgb(0, 0, 0, 0.6);
-  /* color: black; */
-}
-
-.leagueBtn:hover > * {
-  /* color: black; */
-  
 }
 
 .downCaretIcon {
@@ -206,3 +200,63 @@ button {
 .githubIcon {
   margin-right: 5px;
 }
+
+@media (max-width: 680px) {
+  .siteOverview {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .siteTitleBox {
+    /* margin: 10px ; */
+  }
+
+  .siteTitleBox > h2 {
+    margin: 15px 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+
+  .piranhaIcon {
+    height: 30px;
+    margin-top: 10px;
+  }
+
+  .leagueSelection {
+    margin-right: 3px;
+  }
+}
+
+@media (max-width: 450px) {
+  .navBarContainer {
+    padding-right: 6px;
+  }
+
+  .footerContainer {
+    padding: 0px 10px;
+    width: calc(100% - 20px)
+  }
+
+  .copyrightContainer {
+    gap: 3px;
+  }
+
+  .copyrightContainer > * {
+    font-size: 11px;
+  }
+
+  .contactHeader {
+    font-size: 16px;
+  }
+
+  .emailContact, .githubContact {
+    font-size: 12.5px;
+  }
+}
+
+/* .siteOverview {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  color: white;
+} */

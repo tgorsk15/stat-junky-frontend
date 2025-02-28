@@ -439,24 +439,4 @@
 
 }
 
-/* .activeList {
-    position: absolute;
-    top: 85px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    background-color: whitesmoke;
-    overflow-y: scroll;
-    height: 300px;
-    width: 300px;
-    padding: 20px 10px;
-    padding-top: 10px;
-    border-radius: 6px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    box-shadow: 2px 2px 10px 0px rgb(88, 87, 87);
-    visibility: visible;
-    z-index: 2;
-} */
 

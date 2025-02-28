@@ -171,6 +171,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: center;
 }
 
 .contactHeader {
@@ -207,10 +208,6 @@ button {
     gap: 10px;
   }
 
-  .siteTitleBox {
-    /* margin: 10px ; */
-  }
-
   .siteTitleBox > h2 {
     margin: 15px 0px;
     margin-bottom: 0px;
@@ -230,6 +227,15 @@ button {
 @media (max-width: 450px) {
   .navBarContainer {
     padding-right: 6px;
+  }
+
+  .leagueBtn {
+    font-size: 15px;
+  }
+
+  .dropdownVisible {
+    width: 70px;
+    right: 5px;
   }
 
   .footerContainer {
@@ -253,4 +259,6 @@ button {
     font-size: 12.5px;
   }
 }
+
+
 

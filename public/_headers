@@ -1,2 +1,0 @@
-/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cloud.umami.is; connect-src 'self' https://cloud.umami.is

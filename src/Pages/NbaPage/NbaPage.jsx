@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react"
 // import { useQuery, useQueryClient } from "@tanstack/react-query"
-
 // import { getTeams } from "../../utils/dataFetches"
 import nbaStyles from "./nbaPage.module.css"
 import { usePlayer } from "../../utils/usePlayer"
@@ -14,12 +13,6 @@ export const NbaPage = () => {
     const { player1Stats, player2Stats, compareClicked, setClicked } = usePlayer()
 
     const compareRef = useRef(null)
-
-    // CHECKLIST:
-    // add responsiviness - LEFT OFF HERE
-    // find place to get player pictures? web scrape?
-
-
 
     // ** Maybe pre-load all player data instead:
     // const {data: teamsData, isPending, error, refetch} = useQuery({
